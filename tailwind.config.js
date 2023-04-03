@@ -14,6 +14,8 @@ module.exports = {
 				'dark-blue-100': '#1D5171',
 				'sand-50': '#FEDBB7',
 				'sand-80': '#DFCE9D',
+				'sand-300': '#FFA318',
+				'sun-300': '#FF1F24',
 			},
 			backgroundImage: (theme) => ({
 				'gradient-yellowRed': 'linear-gradient(to right, #36d1dc, #5b86e5)',

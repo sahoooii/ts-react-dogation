@@ -4,6 +4,7 @@ import Logo from '@/assets/logo/logo-circle.png';
 import Link from './Link';
 import { LinksType, SelectedPage } from '@/types/types';
 import useMediaQuery from '@/hooks/useMediaQuery';
+import ActionButton from '@/shared/ActionButton';
 
 type Props = {
 	selectedPage: SelectedPage;
@@ -32,6 +33,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
 
 	const flexBetween = 'flex items-center justify-between';
 	const isAboveMediumScreens = useMediaQuery('(min-width: 1060px');
+	const [isMenuToggle, setIsMenuToggle] = useState<boolean>(false);
 
 	return (
 		<nav>
@@ -41,27 +43,35 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
 						{/* Left Side */}
 						<img src={Logo} alt='logo' className='h-24 w-24 rounded-full' />
 
-						{/*Right Side */}
 						{isAboveMediumScreens ? (
-
-						<div className={`${flexBetween} w-full`}>
-							<div className={`${flexBetween} gap-8 font-nav-cursive text-lg`}>
-								{links.map(({ id, link }) => (
-									<Link
-										key={id}
-										page={link}
-										selectedPage={selectedPage}
+							<div className={`${flexBetween} w-full`}>
+								<div
+									className={`${flexBetween} gap-8 font-nav-cursive text-lg`}
+								>
+									{links.map(({ id, link }) => (
+										<Link
+											key={id}
+											page={link}
+											selectedPage={selectedPage}
+											setSelectedPage={setSelectedPage}
+										/>
+									))}
+								</div>
+								{/* Right Side */}
+								<div>
+									<ActionButton
 										setSelectedPage={setSelectedPage}
-									/>
-								))}
+									>
+										Become A Member
+									</ActionButton>
+								</div>
 							</div>
-							<div>
-								<button className='font-title-serif'>Become A Member</button>
-							</div>
-						</div>
 						) : (
-							<button className='rounded-full bg-sun-300 p-2'>
-								{/* 1h2 */}
+							<button
+								className='rounded-full bg-sun-300 p-2'
+								onClick={() => setIsMenuToggle(!isMenuToggle)}
+							>
+								<Bars3Icon className='h-6 w-6 font-bold text-banana-yellow-200' />
 							</button>
 						)}
 					</div>

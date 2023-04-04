@@ -15,7 +15,9 @@ module.exports = {
 				'sand-50': '#FEDBB7',
 				'sand-80': '#DFCE9D',
 				'sand-300': '#FFA318',
-				'sun-300': '#FF1F24',
+				'sun-300': '#FF6F56',
+				'banana-yellow-50': '#F8E035',
+				'banana-yellow-200': '#FFFF11',
 			},
 			backgroundImage: (theme) => ({
 				'gradient-yellowRed': 'linear-gradient(to right, #36d1dc, #5b86e5)',

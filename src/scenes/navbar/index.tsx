@@ -7,11 +7,12 @@ import useMediaQuery from '@/hooks/useMediaQuery';
 import ActionButton from '@/shared/ActionButton';
 
 type Props = {
+	isTopOfPage: boolean;
 	selectedPage: SelectedPage;
 	setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 	const links: Array<LinksType> = [
 		{
 			id: 1,
@@ -34,10 +35,13 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
 	const flexBetween = 'flex items-center justify-between';
 	const isAboveMediumScreens = useMediaQuery('(min-width: 1060px');
 	const [isMenuToggle, setIsMenuToggle] = useState<boolean>(false);
+	const navbarBackground = isTopOfPage ? '' : 'bg-gradient-ocean drop-shadow';
 
 	return (
 		<nav>
-			<div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
+			<div
+				className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}
+			>
 				<div className={`${flexBetween} mx-auto w-5/6`}>
 					<div className={`${flexBetween} w-full gap-16`}>
 						{/* Left Side */}
@@ -59,9 +63,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
 								</div>
 								{/* Right Side */}
 								<div>
-									<ActionButton
-										setSelectedPage={setSelectedPage}
-									>
+									<ActionButton setSelectedPage={setSelectedPage}>
 										Become A Member
 									</ActionButton>
 								</div>
@@ -77,6 +79,28 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
 					</div>
 				</div>
 			</div>
+
+			{/* Mobile Menu Modal */}
+			{!isAboveMediumScreens && isMenuToggle && (
+				<div className='fixed bottom-0 right-0 z-40 h-full w-[300px] bg-gradient-ocean drop-shadow-xl'>
+					{/* Close Icon */}
+					<div className='flex justify-end p-12'>
+						<button onClick={() => setIsMenuToggle(!isMenuToggle)}>
+							<XMarkIcon className='h-6 w-6 text-sand-50' />
+						</button>
+					</div>
+					<div className='ml-[33%] flex flex-col gap-10 font-nav-cursive text-2xl'>
+						{links.map(({ id, link }) => (
+							<Link
+								key={id}
+								page={link}
+								selectedPage={selectedPage}
+								setSelectedPage={setSelectedPage}
+							/>
+						))}
+					</div>
+				</div>
+			)}
 		</nav>
 	);
 };

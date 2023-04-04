@@ -20,7 +20,7 @@ module.exports = {
 				'banana-yellow-200': '#FFFF11',
 			},
 			backgroundImage: (theme) => ({
-				'gradient-yellowRed': 'linear-gradient(to right, #36d1dc, #5b86e5)',
+				'gradient-ocean': 'linear-gradient(to right, #36d1dc, #5b86e5)',
 			}),
 			fontFamily: {
 				'title-serif': ['Bree Serif', 'serif'],

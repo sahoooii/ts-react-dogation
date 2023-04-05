@@ -1,7 +1,7 @@
 import useMediaQuery from '@/hooks/useMediaQuery';
 import ActionButton from '@/shared/ActionButton';
 import { SelectedPage } from '@/types/types';
-import logo from '@/assets/logo/dogation-sm-logo.png';
+import logo from '@/assets/logo/dogation-logo-green.jpg';
 import hawaii from '@/assets/sponsors/hawaii.png';
 import kauai from '@/assets/sponsors/kauai.png';
 import patagonia from '@/assets/sponsors/patagonia.png';
@@ -17,18 +17,18 @@ type Props = {
 
 const Home = ({ setSelectedPage }: Props) => {
 	const isAboveMediumScreens = useMediaQuery('(min-width: 1060px');
-// 2h2
 	return (
 		<section id='home' className='bg-light-green-20 py-10 md:h-full md:pb-0'>
 			{/* Img and Main Header */}
-			<div className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'>
+			<div className='mx-auto w-5/6 items-center justify-center md:flex md:h-5/6'>
 				{/* Main header */}
 				<div className='z-10 mt-32 md:basis-3/5'>
 					{/* Heading */}
 					<div className='md:-mt-20'>
-						<div>
-							<div>
-								<img src={logo} alt='logo' />
+						<div className='relative'>
+							{/* decorateから */}
+							<div className='before:absolute before:content-pow before:-top-20'>
+								<img src={logo} alt='dogation green logo' />
 							</div>
 						</div>
 
@@ -56,10 +56,10 @@ const Home = ({ setSelectedPage }: Props) => {
 							onClick={() => setSelectedPage(SelectedPage.Services)}
 							href={`#${SelectedPage.Services}`}
 						>
-							Details{' '}
+							About Us{' '}
 							<FontAwesomeIcon
 								icon={faPaw}
-								className='group-transition group-duration-500 group-hover:text-sun-300'
+								className='group-hover:text-sun-300'
 							/>
 						</AnchorLink>
 					</div>
@@ -67,7 +67,11 @@ const Home = ({ setSelectedPage }: Props) => {
 
 				{/* Image */}
 				<div>
-					<img src={topImg} alt="Top Image" className='md:w-[400px] md:h-[580px]' />
+					<img
+						src={topImg}
+						alt='Top Image'
+						className='md:h-[580px] md:w-[400px]'
+					/>
 				</div>
 			</div>
 
@@ -76,10 +80,10 @@ const Home = ({ setSelectedPage }: Props) => {
 				<div>
 					<div>
 						<div>
-							<img src={hawaii} alt="hawaii flag" />
-							<img src={kauai} alt="kauai" />
-							<img src={wholeFoods} alt="wholeFoods" />
-							<img src={patagonia} alt="patagonia" />
+							<img src={hawaii} alt='hawaii flag' />
+							<img src={kauai} alt='kauai' />
+							<img src={wholeFoods} alt='wholeFoods' />
+							<img src={patagonia} alt='patagonia' />
 						</div>
 					</div>
 				</div>

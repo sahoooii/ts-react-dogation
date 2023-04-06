@@ -33,7 +33,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 	];
 
 	const flexBetween = 'flex items-center justify-between';
-	const isAboveMediumScreens = useMediaQuery('(min-width: 1060px');
+	const isAboveMediumScreen = useMediaQuery('(min-width: 1060px');
 	const [isMenuToggle, setIsMenuToggle] = useState<boolean>(false);
 	const navbarBackground = isTopOfPage ? '' : 'bg-gradient-ocean drop-shadow';
 
@@ -47,7 +47,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 						{/* Left Side */}
 						<img src={Logo} alt='logo' className='h-24 w-24 rounded-full' />
 
-						{isAboveMediumScreens ? (
+						{isAboveMediumScreen ? (
 							<div className={`${flexBetween} w-full`}>
 								<div
 									className={`${flexBetween} gap-8 font-nav-cursive text-lg`}
@@ -81,7 +81,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 			</div>
 
 			{/* Mobile Menu Modal */}
-			{!isAboveMediumScreens && isMenuToggle && (
+			{!isAboveMediumScreen && isMenuToggle && (
 				<div className='fixed bottom-0 right-0 z-40 h-full w-[300px] bg-gradient-ocean drop-shadow-xl'>
 					{/* Close Icon */}
 					<div className='flex justify-end p-12'>

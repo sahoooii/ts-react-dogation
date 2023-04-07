@@ -9,3 +9,9 @@ export interface LinksType {
 	id: number;
 	link: string;
 }
+
+export interface ServicesType {
+	icon: string;
+	title: string;
+	description: string;
+}

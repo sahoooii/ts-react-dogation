@@ -13,8 +13,8 @@ const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
 	return (
 		<AnchorLink
 			className={`${
-				selectedPage === lowerCasePage ? 'text-light-green-100' : ''
-			} transition duration-500 hover:text-light-green-100`}
+				selectedPage === lowerCasePage ? 'text-sun-300' : ''
+			} hover:text-light-green-100 transition duration-500`}
 			href={`#${lowerCasePage}`}
 			onClick={() => setSelectedPage(lowerCasePage)}
 		>

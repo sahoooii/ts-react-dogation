@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { SelectedPage } from '@/types/types';
 import Navbar from '@/scenes/navbar';
 import Home from '@/scenes/home';
+import Services from '@/scenes/services';
 
 function App() {
 	const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -10,20 +11,17 @@ function App() {
 	const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
 	// handle nav bg
-	useEffect(() => {
+  useEffect(() => {
 		const handleScroll = () => {
 			if (window.scrollY === 0) {
 				setIsTopOfPage(true);
 				setSelectedPage(SelectedPage.Home);
 			}
-			if (window.scrollY !== 0) {
-				setIsTopOfPage(false);
-			}
-			window.addEventListener('scroll', handleScroll);
-
-			return () => window.removeEventListener('scroll', handleScroll);
+			if (window.scrollY !== 0) setIsTopOfPage(false);
 		};
-	});
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
 
 	return (
 		<div className='app bg-light-green-20'>
@@ -33,6 +31,7 @@ function App() {
 				setSelectedPage={setSelectedPage}
 			/>
 			<Home setSelectedPage={setSelectedPage} />
+			<Services setSelectedPage={setSelectedPage} />
 
 		</div>
 	);

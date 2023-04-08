@@ -18,19 +18,19 @@ const services: Array<ServicesType> = [
 		icon: dogHotel,
 		title: 'Hotel',
 		description:
-			"You can stay at our hotel with your buddy everywhere you want! We allow sleeping on the couch and bed too with your dog. We also have perfect dog amenities. You don't have to bring heavy stuff. But don't forget to bring your buddy's favorite toys!",
+			"You can stay at our hotel with your buddy everywhere you want! We have a Huge dog run. Your dog can run anytime. Are you guys tired? Don't worry! We allow sleeping on the couch and bed too with your dog there. And We also have perfect dog amenities. You don't have to bring heavy stuff. But don't forget to bring your buddy's favorite toys!  ",
 	},
 	{
 		icon: dogPhoto,
 		title: 'Photo Studio',
 		description:
-			"We have a perfect photo studio. You can choose two courses, Selfie or Pro style. Just make a reservation and pick the course using Dogation App. Let's take a picture for the most memorable time.",
+			"We have a perfect photo studio. You can choose two courses, Selfie or Pro-style. Just make a reservation and pick the course using Dogation App. We rent cute and funny costumes for you guys. Selfie style is open 24/7. Pro-style is a little more expensive than a selfie. But worth it!! Let's take a picture for the most memorable time.",
 	},
 	{
 		icon: dogTrimming,
 		title: 'Trimming Salon',
 		description:
-			"Did you forget to clean up your dog? Do you want to change your buddy's hairstyle? Don't worry about it! We have a perfect trimming salon! During a drink at the bar, your dog will change cuter. We also give a 10% discount to hotel guests.",
+			"Did you forget to clean up your dog? Do you want to change your buddy's hairstyle? Don't worry about it! We have a perfect trimming salon! During a drink at the bar, your dog will change cuter. And we are located right next door to the photo studio. You guys take a picture with a New Style! We also give a 10% discount to hotel guests.",
 	},
 	{
 		icon: dogTraining,

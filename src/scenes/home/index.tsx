@@ -114,7 +114,7 @@ const Home = ({ setSelectedPage }: Props) => {
 
 			{/* Sponsors */}
 			{isAboveMediaScreen && (
-				<div className='h-[150px] w-full bg-light-blue-100 py-10'>
+				<div className='h-[200px] w-full bg-light-blue-100 py-8'>
 					<div className='mx-auto w-5/6'>
 						<div className='flex items-center justify-between gap-8'>
 							<img src={tripAdvisor} alt='hawaii flag' />

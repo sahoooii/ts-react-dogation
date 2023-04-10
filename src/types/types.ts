@@ -11,6 +11,7 @@ export interface LinksType {
 }
 
 export interface ServicesType {
+	id: number;
 	icon: string;
 	title: string;
 	description: string;

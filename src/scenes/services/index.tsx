@@ -5,7 +5,7 @@ import dogTraining from '@/assets/icons/dog-training.png';
 import dogTrimming from '@/assets/icons/dog-trimming.png';
 import { motion } from 'framer-motion';
 import TitleText from '@/shared/TitleText';
-import { faMartiniGlassCitrus } from '@fortawesome/free-solid-svg-icons';
+import { faUmbrellaBeach } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Service from './Service';
 
@@ -73,7 +73,7 @@ const Services = ({ setSelectedPage }: Props) => {
 						<TitleText>
 							Not Only Chill Out{' '}
 							<FontAwesomeIcon
-								icon={faMartiniGlassCitrus}
+								icon={faUmbrellaBeach}
 								className='align-baseline text-light-green-100'
 							/>
 						</TitleText>

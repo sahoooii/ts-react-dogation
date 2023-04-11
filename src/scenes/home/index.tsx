@@ -54,7 +54,7 @@ const Home = ({ setSelectedPage }: Props) => {
 							"DOGATION"!!
 							<br />
 							We are located in central Waikiki. The beach is just around the
-							corner. We have a fancy cafe and hotels and some more. <br />
+							corner. We have a fancy cafe and bar and some more. <br />
 							Let's chill out on your next vacation{' '}
 							<FontAwesomeIcon
 								icon={faMartiniGlassCitrus}

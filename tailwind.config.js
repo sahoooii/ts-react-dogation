@@ -14,9 +14,13 @@ module.exports = {
 				'dark-blue-100': '#1D5171',
 				'sand-50': '#FEDBB7',
 				'sand-80': '#DFCE9D',
+				'sand-300': '#FFA318',
+				'sun-300': '#FF6F56',
+				'banana-yellow-50': '#F8E035',
+				'banana-yellow-200': '#FFFF11',
 			},
 			backgroundImage: (theme) => ({
-				'gradient-yellowRed': 'linear-gradient(to right, #36d1dc, #5b86e5)',
+				'gradient-ocean': 'linear-gradient(to right, #36d1dc, #5b86e5)',
 			}),
 			fontFamily: {
 				'title-serif': ['Bree Serif', 'serif'],
@@ -24,16 +28,16 @@ module.exports = {
 				'nav-cursive': ['Righteous', 'cursive'],
 			},
 			content: {
-				'logo-no-icon': "url('./assets/logo/dogation-sm-logo.png')",
+				'logo-circle': "url('./assets/logo/dogation-logo-green-circle.jpg')",
 				pow: "url('./assets/decorate/paw-print.png')",
 				chair: "url('./assets/decorate/beach-chair.png')",
 			},
 		},
-	},
-	screens: {
-		xs: '480px',
-		sm: '768px',
-		md: '1060px',
+		screens: {
+			xs: '480px',
+			sm: '768px',
+			md: '1060px',
+		},
 	},
 	plugins: [],
 };

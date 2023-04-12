@@ -10,6 +10,8 @@ import dogCafe from '@/assets/facilities/dogCafe.jpg';
 import trimming from '@/assets/facilities/trimming.jpg';
 import React from 'react';
 import Facility from './Facility';
+import useMediaQuery from '@/hooks/useMediaQuery';
+import MobileImage from './MobileImage';
 
 const OurFacilities: Array<FacilitiesType> = [
 	{
@@ -49,8 +51,10 @@ type Props = {
 };
 
 const Facilities = ({ setSelectedPage }: Props) => {
+	const isAboveMediumScreen = useMediaQuery('(min-width: 1060px');
+
 	return (
-		<section id='facilities' className='min-h-full w-full bg-orange-300 py-36'>
+		<section id='facilities' className='min-h-full w-full bg-orange-300 py-40'>
 			<motion.div
 				onViewportEnter={() => setSelectedPage(SelectedPage.Facilities)}
 			>
@@ -81,18 +85,32 @@ const Facilities = ({ setSelectedPage }: Props) => {
 					</div>
 				</motion.div>
 
-				<div className='mt-10 h-[350px] w-full overflow-x-auto overflow-y-hidden'>
-					<ul className='w-[2400px] whitespace-nowrap'>
+				{/* scroll images */}
+				{isAboveMediumScreen ? (
+					<div className='mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden'>
+						<ul className='w-[2400px] whitespace-nowrap'>
+							{OurFacilities.map((facility, index) => (
+								<Facility
+									key={index}
+									title={facility.title}
+									description={facility.description}
+									image={facility.image}
+								/>
+							))}
+						</ul>
+					</div>
+				) : (
+					<div className='w-full h-full relative flex justify-center items-center'>
 						{OurFacilities.map((facility, index) => (
-							<Facility
+							<MobileImage
 								key={index}
 								title={facility.title}
 								description={facility.description}
 								image={facility.image}
 							/>
 						))}
-					</ul>
-				</div>
+					</div>
+				)}
 			</motion.div>
 		</section>
 	);

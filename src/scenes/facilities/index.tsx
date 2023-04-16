@@ -8,10 +8,20 @@ import photoStudio from '@/assets/facilities/photo_studio.jpg';
 import training from '@/assets/facilities/training.jpg';
 import dogCafe from '@/assets/facilities/dogCafe.jpg';
 import trimming from '@/assets/facilities/trimming.jpg';
-import React from 'react';
 import Facility from './Facility';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import MobileImage from './MobileImage';
+
+// from here
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { IonIcon } from '@ionic/react';
+import { chevronBack, chevronForward } from 'ionicons/icons';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 
 const OurFacilities: Array<FacilitiesType> = [
 	{
@@ -100,16 +110,51 @@ const Facilities = ({ setSelectedPage }: Props) => {
 						</ul>
 					</div>
 				) : (
-					<div className='w-full h-full relative flex justify-center items-center'>
+					<Swiper
+						effect={'coverflow'}
+						grabCursor={true}
+						centeredSlides={true}
+						loop={true}
+						slidesPerView={'auto'}
+						coverflowEffect={{
+							rotate: 0,
+							stretch: 0,
+							depth: 100,
+							modifier: 2.5,
+						}}
+						pagination={{ el: '.swiper-pagination', clickable: true }}
+						navigation={{
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						}}
+						modules={[EffectCoverflow, Pagination, Navigation]}
+						className='relative h-[550px] pt-8'
+					>
+						{/* <div className='relative flex h-[450px] w-full items-center justify-center'> */}
 						{OurFacilities.map((facility, index) => (
-							<MobileImage
-								key={index}
-								title={facility.title}
-								description={facility.description}
-								image={facility.image}
-							/>
+							<SwiperSlide key={index} className='flex'>
+								<MobileImage
+									title={facility.title}
+									description={facility.description}
+									image={facility.image}
+								/>
+							</SwiperSlide>
 						))}
-					</div>
+						{/* slider-controller */}
+						<div className='relative bottom-8 flex items-center justify-center'>
+							{/* swiper-button-prev slider-arrow */}
+							<div className='swiper-button-prev slider-arrow'>
+								<IonIcon icon={chevronBack}></IonIcon>
+							</div>
+							{/* swiper-button-next slider-arrow */}
+							<div className='swiper-button-next slider-arrow flex items-center justify-center'>
+								<IonIcon icon={chevronForward}></IonIcon>
+							</div>
+							{/* swiper-pagination */}
+							<div className='swiper-pagination'></div>
+						</div>
+						{/* </div> */}
+					</Swiper>
 				)}
 			</motion.div>
 		</section>

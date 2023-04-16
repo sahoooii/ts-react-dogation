@@ -1,33 +1,16 @@
-import { log } from 'console';
-import { AnimatePresence, motion } from 'framer-motion';
-import { wrap } from 'popmotion';
-import React, { useState } from 'react';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const variants = {
-	enter: (direction: number) => {
-		return {
-			x: direction > 0 ? 1000 : -1000,
-			opacity: 0,
-		};
-	},
-	center: {
-		zIndex: 1,
-		x: 0,
-		opacity: 1,
-	},
-	exit: (direction: number) => {
-		return {
-			zIndex: 0,
-			x: direction < 0 ? 1000 : -1000,
-			opacity: 0,
-		};
-	},
-};
+import { IonIcon } from '@ionic/react';
+import { chevronBack, chevronForward } from 'ionicons/icons';
 
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
-	return Math.abs(offset) * velocity;
-};
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 
 type Props = {
 	title: string;
@@ -36,18 +19,12 @@ type Props = {
 };
 
 const MobileImage = ({ title, description, image }: Props) => {
-	const [[page, direction], setPage] = useState([0, 0]);
-	const imageIndex = wrap(0, 4, page);
-	const paginate = (newDirection: number) => {
-		setPage([page + newDirection, newDirection]);
-	};
+	const arrowStyle = `absolute top-[calc(50%-20px)] h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center select-none cursor-pointer font-bold text-2xl z-20`;
 
 	return (
-		<div>
-			<AnimatePresence initial={false} custom={direction}>
-				<motion.img></motion.img>
-			</AnimatePresence>
-		</div>
+		<>
+			<img src={image} alt={image} />
+		</>
 	);
 };
 

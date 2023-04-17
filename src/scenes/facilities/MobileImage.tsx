@@ -19,11 +19,13 @@ type Props = {
 };
 
 const MobileImage = ({ title, description, image }: Props) => {
-	const arrowStyle = `absolute top-[calc(50%-20px)] h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center select-none cursor-pointer font-bold text-2xl z-20`;
-
 	return (
 		<>
-			<img src={image} alt={image} />
+			<img
+				src={image}
+				alt={image}
+				className='block h-[24rem] w-[20rem] rounded-3xl sm:h-[30rem] sm:w-[34rem] md:h-[34rem] md:w-[38rem]'
+			/>
 		</>
 	);
 };

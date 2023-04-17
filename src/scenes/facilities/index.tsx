@@ -96,7 +96,7 @@ const Facilities = ({ setSelectedPage }: Props) => {
 				</motion.div>
 
 				{/* scroll images */}
-				{isAboveMediumScreen ? (
+				{/* {isAboveMediumScreen ? (
 					<div className='mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden'>
 						<ul className='w-[2400px] whitespace-nowrap'>
 							{OurFacilities.map((facility, index) => (
@@ -109,53 +109,62 @@ const Facilities = ({ setSelectedPage }: Props) => {
 							))}
 						</ul>
 					</div>
-				) : (
-					<Swiper
-						effect={'coverflow'}
-						grabCursor={true}
-						centeredSlides={true}
-						loop={true}
-						slidesPerView={'auto'}
-						coverflowEffect={{
-							rotate: 0,
-							stretch: 0,
-							depth: 100,
-							modifier: 2.5,
-						}}
-						pagination={{ el: '.swiper-pagination', clickable: true }}
-						navigation={{
-							nextEl: '.swiper-button-next',
-							prevEl: '.swiper-button-prev',
-						}}
-						modules={[EffectCoverflow, Pagination, Navigation]}
-						className='relative h-[550px] pt-8'
-					>
-						{/* <div className='relative flex h-[450px] w-full items-center justify-center'> */}
-						{OurFacilities.map((facility, index) => (
-							<SwiperSlide key={index} className='flex'>
-								<MobileImage
-									title={facility.title}
-									description={facility.description}
-									image={facility.image}
-								/>
-							</SwiperSlide>
-						))}
-						{/* slider-controller */}
-						<div className='relative bottom-8 flex items-center justify-center'>
-							{/* swiper-button-prev slider-arrow */}
-							<div className='swiper-button-prev slider-arrow'>
-								<IonIcon icon={chevronBack}></IonIcon>
-							</div>
-							{/* swiper-button-next slider-arrow */}
-							<div className='swiper-button-next slider-arrow flex items-center justify-center'>
-								<IonIcon icon={chevronForward}></IonIcon>
-							</div>
-							{/* swiper-pagination */}
-							<div className='swiper-pagination'></div>
+				) : ( */}
+				<Swiper
+					effect={'coverflow'}
+					grabCursor={true}
+					centeredSlides={true}
+					loop={true}
+					slidesPerView={'auto'}
+					coverflowEffect={{
+						rotate: 50,
+						stretch: 0,
+						depth: 100,
+						modifier: 1,
+						slideShadows: true,
+					}}
+					pagination={{ el: '.swiper-pagination', clickable: true }}
+					navigation={{
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					}}
+					modules={[EffectCoverflow, Pagination, Navigation]}
+					className='relative h-[35rem] w-full pt-8 sm:h-[38rem] md:h-[42rem]'
+				>
+					{OurFacilities.map((facility, index) => (
+						<SwiperSlide
+							key={index}
+							className='relative h-[24rem] w-[20rem] sm:h-[30rem] sm:w-[34rem] md:h-[34rem] md:w-[38rem]'
+						>
+							<MobileImage
+								title={facility.title}
+								description={facility.description}
+								image={facility.image}
+							/>
+						</SwiperSlide>
+					))}
+					{/* slider-controller */}
+					<div className='relative bottom-12 flex items-center justify-center'>
+						{/* swiper-button-prev slider-arrow */}
+						<div className='swiper-button-prev left-[17%] h-14 w-14 translate-x-[-17%] transition rounded-full bg-sand-80 drop-shadow-md after:hidden after:content-none sm:left-[35%] sm:translate-x-[-35%] '>
+							<IonIcon
+								icon={chevronBack}
+								className='text-4xl text-white opacity-60'
+							></IonIcon>
 						</div>
-						{/* </div> */}
-					</Swiper>
-				)}
+						{/* swiper-button-next slider-arrow */}
+						<div className='swiper-button-next left-[83%] h-14 w-14 translate-x-[-83%] transition rounded-full bg-sand-80 drop-shadow-md after:hidden after:content-none sm:left-[65%] sm:translate-x-[-65%]'>
+							<IonIcon
+								icon={chevronForward}
+								className='text-4xl text-white opacity-60'
+							></IonIcon>
+						</div>
+						{/* swiper-pagination */}
+						<div className='swiper-pagination relative bottom-4 w-60 drop-shadow-md [&_.swiper-pagination-bullet-active]:drop-shadow-md [&_.swiper-pagination-bullet]:bg-light-blue-50'></div>
+					</div>
+					{/* </div> */}
+				</Swiper>
+				{/* )} */}
 			</motion.div>
 		</section>
 	);

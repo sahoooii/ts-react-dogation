@@ -49,7 +49,7 @@ const Home = ({ setSelectedPage }: Props) => {
 						</div>
 
 						<p className='mt-8 text-sm leading-5'>
-							This place is for All dogs and all dog lovers. You can spend time
+							This place is for All dogs and All dog lovers. You can spend time
 							all day with your buddy. Our concepts are vacation and dog. Yes,
 							"DOGATION"!!
 							<br />

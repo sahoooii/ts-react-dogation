@@ -37,7 +37,7 @@ const OurFacilities: Array<FacilitiesType> = [
 	{
 		title: 'Trimming Salon',
 		description:
-			'We have a cute trimming salon right next to a Photo studio. When your buddy gets dirty, you can ask trimmers to clean. To make a reservation, use our app. We have many courses you can pick from them. Also, we have a self-shampoo room!',
+			'We have a cute trimming salon right next to a Photo studio. When your buddy gets dirty, you can ask trimmers to clean. To make a reservation, use our Dogation App. We have many courses you can pick from them. Also, we have a self-shampoo room!',
 		image: trimming,
 	},
 	{
@@ -61,7 +61,10 @@ type Props = {
 const Facilities = ({ setSelectedPage }: Props) => {
 
 	return (
-		<section id='facilities' className='min-h-full w-full bg-orange-300 py-40'>
+		<section
+			id='facilities'
+			className='min-h-full w-full bg-light-green-20 py-40'
+		>
 			<motion.div
 				onViewportEnter={() => setSelectedPage(SelectedPage.Facilities)}
 			>
@@ -81,7 +84,7 @@ const Facilities = ({ setSelectedPage }: Props) => {
 							All day , All Night{' '}
 							<FontAwesomeIcon
 								icon={faMartiniGlassCitrus}
-								className='align-baseline text-banana-yellow-200'
+								className='align-baseline text-banana-yellow-50'
 							/>
 						</TitleText>
 						<p className='my-5 text-sm leading-5 text-dark-blue-50'>
@@ -128,13 +131,13 @@ const Facilities = ({ setSelectedPage }: Props) => {
 					))}
 					{/* slider-controller */}
 					<div className='relative bottom-12 flex items-center justify-center'>
-						<div className='swiper-button-prev group left-[20%] h-14 w-14 translate-x-[-20%] rounded-full bg-sand-80 drop-shadow-md transition after:hidden after:content-none sm:left-[28%] sm:translate-x-[-28%] md:left-[35%] md:translate-x-[-35%]'>
+						<div className='swiper-button-prev group left-[20%] h-14 w-14 translate-x-[-20%] rounded-full bg-light-blue-100 drop-shadow-md transition after:hidden after:content-none sm:left-[28%] sm:translate-x-[-28%] md:left-[35%] md:translate-x-[-35%]'>
 							<IonIcon
 								icon={chevronBack}
 								className='text-4xl text-white opacity-60 transition duration-500 group-hover:-translate-x-2'
 							></IonIcon>
 						</div>
-						<div className='swiper-button-next group left-[80%] h-14 w-14 translate-x-[-80%] rounded-full bg-sand-80 drop-shadow-md transition after:hidden after:content-none sm:left-[72%] sm:translate-x-[-72%] md:left-[65%] md:translate-x-[-65%]'>
+						<div className='swiper-button-next group left-[80%] h-14 w-14 translate-x-[-80%] rounded-full bg-light-blue-100 drop-shadow-md transition after:hidden after:content-none sm:left-[72%] sm:translate-x-[-72%] md:left-[65%] md:translate-x-[-65%]'>
 							<IonIcon
 								icon={chevronForward}
 								className='text-4xl text-white opacity-60 transition duration-500 group-hover:translate-x-2'

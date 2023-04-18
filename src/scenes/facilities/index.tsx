@@ -3,16 +3,14 @@ import { FacilitiesType, SelectedPage } from '@/types/types';
 import { motion } from 'framer-motion';
 import { faMartiniGlassCitrus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// Images
 import dogRunJump from '@/assets/facilities/dogRunJump.jpg';
 import photoStudio from '@/assets/facilities/photo_studio.jpg';
 import training from '@/assets/facilities/training.jpg';
 import dogCafe from '@/assets/facilities/dogCafe.jpg';
 import trimming from '@/assets/facilities/trimming.jpg';
 import Facility from './Facility';
-import useMediaQuery from '@/hooks/useMediaQuery';
-import MobileImage from './MobileImage';
 
-// from here
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IonIcon } from '@ionic/react';
 import { chevronBack, chevronForward } from 'ionicons/icons';
@@ -61,7 +59,6 @@ type Props = {
 };
 
 const Facilities = ({ setSelectedPage }: Props) => {
-	const isAboveMediumScreen = useMediaQuery('(min-width: 1060px');
 
 	return (
 		<section id='facilities' className='min-h-full w-full bg-orange-300 py-40'>
@@ -95,21 +92,7 @@ const Facilities = ({ setSelectedPage }: Props) => {
 					</div>
 				</motion.div>
 
-				{/* scroll images */}
-				{/* {isAboveMediumScreen ? (
-					<div className='mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden'>
-						<ul className='w-[2400px] whitespace-nowrap'>
-							{OurFacilities.map((facility, index) => (
-								<Facility
-									key={index}
-									title={facility.title}
-									description={facility.description}
-									image={facility.image}
-								/>
-							))}
-						</ul>
-					</div>
-				) : ( */}
+				{/* swiper images */}
 				<Swiper
 					effect={'coverflow'}
 					grabCursor={true}
@@ -121,7 +104,7 @@ const Facilities = ({ setSelectedPage }: Props) => {
 						stretch: 0,
 						depth: 100,
 						modifier: 1,
-						slideShadows: true,
+						slideShadows: false,
 					}}
 					pagination={{ el: '.swiper-pagination', clickable: true }}
 					navigation={{
@@ -129,14 +112,14 @@ const Facilities = ({ setSelectedPage }: Props) => {
 						prevEl: '.swiper-button-prev',
 					}}
 					modules={[EffectCoverflow, Pagination, Navigation]}
-					className='relative h-[35rem] w-full pt-8 sm:h-[38rem] md:h-[42rem]'
+					className='relative h-[27rem] w-full pt-8 sm:h-[33rem] md:h-[37rem]'
 				>
 					{OurFacilities.map((facility, index) => (
 						<SwiperSlide
 							key={index}
-							className='relative h-[24rem] w-[20rem] sm:h-[30rem] sm:w-[34rem] md:h-[34rem] md:w-[38rem]'
+							className='relative h-[20rem] w-[17rem] sm:h-[26rem] sm:w-[30rem] md:h-[30rem] md:w-[34rem]'
 						>
-							<MobileImage
+							<Facility
 								title={facility.title}
 								description={facility.description}
 								image={facility.image}
@@ -145,26 +128,21 @@ const Facilities = ({ setSelectedPage }: Props) => {
 					))}
 					{/* slider-controller */}
 					<div className='relative bottom-12 flex items-center justify-center'>
-						{/* swiper-button-prev slider-arrow */}
-						<div className='swiper-button-prev left-[17%] h-14 w-14 translate-x-[-17%] transition rounded-full bg-sand-80 drop-shadow-md after:hidden after:content-none sm:left-[35%] sm:translate-x-[-35%] '>
+						<div className='swiper-button-prev group left-[20%] h-14 w-14 translate-x-[-20%] rounded-full bg-sand-80 drop-shadow-md transition after:hidden after:content-none sm:left-[28%] sm:translate-x-[-28%] md:left-[35%] md:translate-x-[-35%]'>
 							<IonIcon
 								icon={chevronBack}
-								className='text-4xl text-white opacity-60'
+								className='text-4xl text-white opacity-60 transition duration-500 group-hover:-translate-x-2'
 							></IonIcon>
 						</div>
-						{/* swiper-button-next slider-arrow */}
-						<div className='swiper-button-next left-[83%] h-14 w-14 translate-x-[-83%] transition rounded-full bg-sand-80 drop-shadow-md after:hidden after:content-none sm:left-[65%] sm:translate-x-[-65%]'>
+						<div className='swiper-button-next group left-[80%] h-14 w-14 translate-x-[-80%] rounded-full bg-sand-80 drop-shadow-md transition after:hidden after:content-none sm:left-[72%] sm:translate-x-[-72%] md:left-[65%] md:translate-x-[-65%]'>
 							<IonIcon
 								icon={chevronForward}
-								className='text-4xl text-white opacity-60'
+								className='text-4xl text-white opacity-60 transition duration-500 group-hover:translate-x-2'
 							></IonIcon>
 						</div>
-						{/* swiper-pagination */}
-						<div className='swiper-pagination relative bottom-4 w-60 drop-shadow-md [&_.swiper-pagination-bullet-active]:drop-shadow-md [&_.swiper-pagination-bullet]:bg-light-blue-50'></div>
+						<div className='swiper-pagination relative top-1 w-60 drop-shadow-md [&_.swiper-pagination-bullet-active]:drop-shadow-md'></div>
 					</div>
-					{/* </div> */}
 				</Swiper>
-				{/* )} */}
 			</motion.div>
 		</section>
 	);

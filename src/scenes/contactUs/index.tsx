@@ -24,11 +24,11 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 		}
 	};
 
-	const formDesignStyle = `mx-auto w-[90%] border-b-2 border-light-green-20 sm:w-[80%]`;
-	const formInputStyle = `w-full bg-sand-80 p-2 text-sm outline-none placeholder:uppercase sm:text-lg`;
+	const formDesignStyle = `mx-auto border-b-2 border-light-green-20 w-full`;
+	const formInputStyle = `w-full bg-sand-80 p-2 text-sm outline-none placeholder:uppercase text-base`;
 
 	return (
-		<section id='contactus' className='h-full bg-light-green-100 py-36'>
+		<section id='contactus' className='bg-light-green-100 py-36'>
 			<div className='mx-auto w-5/6'>
 				<motion.div
 					onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
@@ -76,47 +76,157 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 								visible: { opacity: 1, y: 0 },
 							}}
 						>
-							<form
-								action='https://formsubmit.co/d8ba071863b209c206352f351fbccf9e'
-								method='POST'
-								target='_blank'
-								onSubmit={onSubmit}
-							>
-								<div className='mx-auto border-2 border-light-green-20 bg-sand-80 p-10 shadow-lg'>
-									<h1 className='pb-2 pt-5 text-center text-lg font-bold sm:pb-6 sm:pt-10 sm:text-4xl'>
-										<FontAwesomeIcon
-											icon={faBone}
-											className=' mr-3 text-banana-yellow-200'
-										/>
-										Dogation Member
-										<FontAwesomeIcon
-											icon={faBone}
-											className=' ml-3 text-banana-yellow-200'
-										/>
-									</h1>
+							<div className='mx-auto border-2 border-light-green-20 bg-sand-80 p-10 shadow-lg mt-6'>
+								<h1 className='pb-2 pt-5 text-center text-lg font-bold sm:pb-6 sm:pt-10 sm:text-4xl'>
+									<FontAwesomeIcon
+										icon={faBone}
+										className=' mr-4 text-light-green-20'
+									/>
+									Dogation Member
+									<FontAwesomeIcon
+										icon={faBone}
+										className=' ml-4 text-light-green-20'
+									/>
+								</h1>
 
-									<div className='grid gap-y-6 sm:grid-cols-2'>
-										<div className={formDesignStyle}>
-											<label htmlFor='name'></label>
+								<form
+									action='https://formsubmit.co/d8ba071863b209c206352f351fbccf9e'
+									method='POST'
+									target='_blank'
+									onSubmit={onSubmit}
+								>
+									<div className='mt-4 grid grid-cols-2 gap-x-3'>
+										<div className={`${formDesignStyle} sm:w-[80%]`}>
+											<label htmlFor='firstName'></label>
 											<input
-												placeholder='My Name is'
-												name='name'
+												placeholder='My First Name is'
+												// name='firstName'
 												className={formInputStyle}
 												type='text'
-											></input>
+												{...register('firstName', {
+													required: true,
+													maxLength: 100,
+												})}
+											/>
+											{errors.firstName && (
+												<p className='mt-1 text-sun-300'>
+													{errors.firstName.type === 'required' &&
+														'This field is required.'}
+													{errors.firstName.type === 'maxLength' &&
+														'Max length is 100 char.'}
+												</p>
+											)}
 										</div>
-										<div className={formDesignStyle}>
+										<div className={`${formDesignStyle} sm:w-[80%]`}>
+											<label htmlFor='lastName'></label>
+											<input
+												placeholder='My Last Name is'
+												// name='lastName'
+												className={formInputStyle}
+												type='text'
+												{...register('lastName', {
+													required: true,
+													maxLength: 100,
+												})}
+											/>
+											{errors.lastName && (
+												<p className='mt-1 text-sun-300'>
+													{errors.lastName.type === 'required' &&
+														'This field is required.'}
+													{errors.lastName.type === 'maxLength' &&
+														'Max length is 100 char.'}
+												</p>
+											)}
+										</div>
+									</div>
+
+									<div className='mt-6'>
+										<div className={`${formDesignStyle} sm:w-[90%]`}>
 											<label htmlFor='phone'></label>
 											<input
 												placeholder='My number is'
-												name='phone'
+												// name='phone'
 												className={formInputStyle}
 												type='text'
-											></input>
+												{...register('phone', {
+													required: true,
+													pattern: /^0\d{9,10}$/,
+												})}
+											/>
+											{errors.phone && (
+												<p className='mt-1  text-sun-300'>
+													{errors.phone.type === 'required' &&
+														'This field is required.'}
+													{errors.phone.type === 'pattern' &&
+														'Invalid phone number.'}
+												</p>
+											)}
+										</div>
+
+										<div className={`${formDesignStyle} mt-6 sm:w-[90%]`}>
+											<label htmlFor='email' />
+											<input
+												placeholder='My E-Mail is'
+												// name='email'
+												className={formInputStyle}
+												type='text'
+												{...register('email', {
+													required: true,
+													pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+												})}
+											/>
+											{errors.email && (
+												<p className='mt-1  text-sun-300'>
+													{errors.email.type === 'required' &&
+														'This field is required.'}
+													{errors.email.type === 'pattern' &&
+														'Invalid email address.'}
+												</p>
+											)}
+										</div>
+
+										<div className={`${formDesignStyle} mt-6 sm:w-[90%]`}>
+											<label htmlFor='subject'></label>
+											<select
+												// name='subject'
+												className={`${formInputStyle} text-slate-400`}
+												placeholder='Subject line'
+												defaultValue={'DEFAULT'}
+												{...register('subject', {
+													required: true,
+												})}
+											>
+												<option disabled hidden value={'DEFAULT'}>
+													What are you expecting from our hotel?
+												</option>
+												<option value='activity'>
+													I'd like to do some activities.
+												</option>
+												<option value='relax'>
+													I'd like to chill out all day.
+												</option>
+												<option value='for dog'>
+													I'd like to do something special for my dog.
+												</option>
+											</select>
+											{errors.subject && (
+												<p className='mt-1 text-sun-300'>
+													{errors.subject.type === 'required' &&
+														'This field is required.'}
+												</p>
+											)}
 										</div>
 									</div>
-								</div>
-							</form>
+
+									<div className='group mx-auto mb-12 mt-16 w-full shadow-lg transition duration-500 sm:mb-24 sm:w-[45%]'>
+										<input
+											type='submit'
+											value='Become A Member'
+											className='flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-banana-yellow-50 px-10 py-3 font-title-serif  text-sun-300 transition duration-500 group-hover:translate-y-0.5 group-hover:bg-sun-300 group-hover:text-banana-yellow-50  group-hover:shadow-none '
+										/>
+									</div>
+								</form>
+							</div>
 						</motion.div>
 					</div>
 				</motion.div>

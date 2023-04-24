@@ -4,6 +4,7 @@ import Navbar from '@/scenes/navbar';
 import Home from '@/scenes/home';
 import Services from '@/scenes/services';
 import Facilities from '@/scenes/facilities';
+import ContactUs from '@/scenes/contactUs';
 
 function App() {
 	const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -34,7 +35,7 @@ function App() {
 			<Home setSelectedPage={setSelectedPage} />
 			<Services setSelectedPage={setSelectedPage} />
 			<Facilities setSelectedPage={setSelectedPage} />
-
+			<ContactUs setSelectedPage={setSelectedPage} />
 		</div>
 	);
 }

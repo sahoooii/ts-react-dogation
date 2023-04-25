@@ -28,9 +28,8 @@ module.exports = {
 				'nav-cursive': ['Righteous', 'cursive'],
 			},
 			content: {
-				'logo-circle': "url('./assets/logo/dogation-logo-green-circle.jpg')",
 				pow: "url('./assets/decorate/paw-print.png')",
-				chair: "url('./assets/decorate/beach-chair.png')",
+				'dogation-contact': "url('./assets/logo/dogation-contact.png')",
 			},
 		},
 		screens: {

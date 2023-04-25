@@ -1,7 +1,7 @@
 import { SelectedPage } from '@/types/types';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import ContactImage from '@/assets/contact/standingDog.jpg';
+import ContactStanding from '@/assets/contact/standingDog.jpg';
 import TitleText from '@/shared/TitleText';
 import { faPaw, faBone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -66,6 +66,26 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 					{/* Form and Image */}
 					<div className='mt-10 justify-between gap-8 md:flex'>
 						<motion.div
+							className='relative mt-12 basis-2/5 sm:order-2 md:mt-32'
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true, amount: 0.5 }}
+							transition={{ delay: 0.4, duration: 0.8 }}
+							variants={{
+								hidden: { opacity: 0, y: -50 },
+								visible: { opacity: 1, y: 0 },
+							}}
+						>
+							<div className='w-full before:absolute before:-right-7 before:-top-24 before:z-[1] md:before:content-dogation-contact'>
+								<img
+									src={ContactStanding}
+									alt={ContactStanding}
+									className='mx-auto w-[280px] rounded-full shadow-lg md:mt-8 sm:w-[350px] md:w-full md:rounded-md'
+								/>
+							</div>
+						</motion.div>
+
+						<motion.div
 							className='mt-10 basis-3/5 md:mt-0'
 							initial='hidden'
 							whileInView='visible'
@@ -76,16 +96,16 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 								visible: { opacity: 1, y: 0 },
 							}}
 						>
-							<div className='mx-auto border-2 border-light-green-20 bg-sand-80 p-10 shadow-lg mt-6'>
-								<h1 className='pb-2 pt-5 text-center text-lg font-bold sm:pb-6 sm:pt-10 sm:text-4xl'>
+							<div className='mx-auto mt-6 border-2 border-light-green-20 bg-sand-80 p-10 shadow-lg'>
+								<h1 className='pb-2 pt-5 text-center text-xl font-bold sm:pb-6 sm:pt-10 sm:text-4xl'>
 									<FontAwesomeIcon
 										icon={faBone}
-										className=' mr-4 text-light-green-20'
+										className='sm:fa-lg fa-xs mr-2 text-light-green-20 sm:mr-4'
 									/>
 									Dogation Member
 									<FontAwesomeIcon
 										icon={faBone}
-										className=' ml-4 text-light-green-20'
+										className='sm:fa-lg fa-xs ml-2 text-light-green-20 sm:ml-4'
 									/>
 								</h1>
 
@@ -222,7 +242,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 										<input
 											type='submit'
 											value='Become A Member'
-											className='flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-banana-yellow-50 px-10 py-3 font-title-serif  text-sun-300 transition duration-500 group-hover:translate-y-0.5 group-hover:bg-sun-300 group-hover:text-banana-yellow-50  group-hover:shadow-none '
+											className='flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-banana-yellow-50 px-10 py-3 font-title-serif text-sun-300 transition duration-500 group-hover:bg-sun-300 group-hover:text-banana-yellow-50'
 										/>
 									</div>
 								</form>

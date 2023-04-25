@@ -115,7 +115,7 @@ const Facilities = ({ setSelectedPage }: Props) => {
 						prevEl: '.swiper-button-prev',
 					}}
 					modules={[EffectCoverflow, Pagination, Navigation]}
-					className='relative h-[27rem] w-full pt-8 sm:h-[33rem] md:h-[37rem]'
+					className='relative h-[27rem] w-full pt-8 sm:h-[34rem] md:h-[37rem]'
 				>
 					{OurFacilities.map((facility, index) => (
 						<SwiperSlide

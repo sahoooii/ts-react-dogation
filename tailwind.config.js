@@ -7,7 +7,6 @@ module.exports = {
 				'light-green-20': '#E6FFE9',
 				'light-green-50': '#B1F9D0',
 				'light-green-100': '#96D0CD',
-				'light-blue-20': '#BAD3FF',
 				'light-blue-50': '#65CBDA',
 				'light-blue-100': '#15B2D1',
 				'dark-blue-50': '#236E95',
@@ -28,9 +27,8 @@ module.exports = {
 				'nav-cursive': ['Righteous', 'cursive'],
 			},
 			content: {
-				'logo-circle': "url('./assets/logo/dogation-logo-green-circle.jpg')",
 				pow: "url('./assets/decorate/paw-print.png')",
-				chair: "url('./assets/decorate/beach-chair.png')",
+				'dogation-contact': "url('./assets/logo/dogation-contact.png')",
 			},
 		},
 		screens: {

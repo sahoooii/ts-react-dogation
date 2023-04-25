@@ -94,7 +94,7 @@ const Home = ({ setSelectedPage }: Props) => {
 
 				{/* Image */}
 				<motion.div
-					className='mb-10 mt-8 flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-24 md:justify-items-end'
+					className='mb-12 mt-8 flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-24 md:justify-items-end'
 					initial='hidden'
 					whileInView='visible'
 					viewport={{ once: true, amount: 0.5 }}
@@ -107,7 +107,7 @@ const Home = ({ setSelectedPage }: Props) => {
 					<img
 						src={topImg}
 						alt='Top Image'
-						className='h-[550px] w-[360px] rounded-t-[400px] shadow-2xl transition duration-500 hover:saturate-200 hover:filter md:h-[480px] md:w-[340px] md:rounded-lg'
+						className='h-[550px] w-[360px] rounded-t-[400px] shadow-2xl transition duration-500 hover:saturate-200 hover:filter md:h-[510px] md:w-[370px] md:rounded-lg'
 					/>
 				</motion.div>
 			</motion.div>

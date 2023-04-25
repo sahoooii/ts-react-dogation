@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
-import Logo from '@/assets/logo/logo-circle.png';
 import LogoCircle from '@/assets/logo/dogation-logo-circle.png';
 import Link from './Link';
 import { LinksType, SelectedPage } from '@/types/types';

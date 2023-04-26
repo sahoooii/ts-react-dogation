@@ -89,7 +89,7 @@ const Services = ({ setSelectedPage }: Props) => {
 						className='mt-24 items-center justify-center sm:mt-12 sm:grid sm:grid-cols-2 sm:gap-12'
 						initial='hidden'
 						whileInView='visible'
-						viewport={{ once: true, amount: 0.5 }}
+						viewport={{ once: true, amount: 0.3 }}
 						variants={container}
 					>
 						{services.map((service: ServicesType) => (

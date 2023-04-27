@@ -13,7 +13,7 @@ ReactとTypeScriptとTailwind CSSを使って作った、オリジナルのホ�
 
 ## Demo
 
-![dogation](https://user-images.githubusercontent.com/75118062/234512955-bb630836-c749-4ae1-86e6-384678926087.gif)
+![dogation](https://user-images.githubusercontent.com/75118062/234746779-e845ec53-d27e-4ace-9217-629932694de8.gif)
 
 
 ## Dependency

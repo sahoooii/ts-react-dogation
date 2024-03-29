@@ -80,7 +80,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 								<img
 									src={ContactStanding}
 									alt={ContactStanding}
-									className='mx-auto w-[280px] rounded-full shadow-lg md:mt-8 sm:w-[350px] md:w-full md:rounded-md'
+									className='mx-auto w-[280px] rounded-full shadow-lg sm:w-[350px] md:mt-8 md:w-full md:rounded-md'
 								/>
 							</div>
 						</motion.div>
@@ -209,14 +209,15 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 											<label htmlFor='subject'></label>
 											<select
 												// name='subject'
-												className={`${formInputStyle} text-slate-400`}
+												className={`${formInputStyle}`}
 												placeholder='Subject line'
 												defaultValue={'DEFAULT'}
 												{...register('subject', {
 													required: true,
 												})}
+												required
 											>
-												<option disabled hidden value={'DEFAULT'}>
+												<option hidden value=''>
 													What are you expecting from our hotel?
 												</option>
 												<option value='activity'>

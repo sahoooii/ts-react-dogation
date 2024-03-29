@@ -13,3 +13,16 @@ body,
 	font-family: 'Noto Serif Sinhala', serif;
 	@apply text-dark-blue-100;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: #000000;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+select:invalid {
+	color: rgb(148 163 184);
+}

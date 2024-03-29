@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import LogoCircle from '@/assets/logo/dogation-logo-circle.png';
 import Link from './Link';
@@ -35,7 +35,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 	const flexBetween = 'flex items-center justify-between';
 	const isAboveMediumScreen = useMediaQuery('(min-width: 1060px');
 	const [isMenuToggle, setIsMenuToggle] = useState<boolean>(false);
-	const navbarBackground = isTopOfPage ? '' : 'bg-gradient-ocean drop-shadow';
+	const navbarBackground = isTopOfPage ? '' : 'bg-light-blue-50 drop-shadow';
 
 	return (
 		<nav>
@@ -45,11 +45,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 				<div className={`${flexBetween} mx-auto w-5/6`}>
 					<div className={`${flexBetween} w-full gap-16`}>
 						{/* Left Side */}
-						<img
-							src={LogoCircle}
-							alt='logo'
-							className='h-20 w-20'
-						/>
+						<img src={LogoCircle} alt='logo' className='h-20 w-20' />
 
 						{isAboveMediumScreen ? (
 							<div className={`${flexBetween} w-full`}>
@@ -86,7 +82,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
 			{/* Mobile Menu Modal */}
 			{!isAboveMediumScreen && isMenuToggle && (
-				<div className='fixed bottom-0 right-0 z-40 h-full w-[300px] bg-gradient-ocean drop-shadow-xl'>
+				<div className='fixed bottom-0 right-0 z-40 h-full w-[300px] bg-sun-300 drop-shadow-xl'>
 					{/* Close Icon */}
 					<div className='flex justify-end p-12'>
 						<button onClick={() => setIsMenuToggle(!isMenuToggle)}>

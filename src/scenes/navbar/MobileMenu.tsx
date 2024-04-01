@@ -77,12 +77,13 @@ const MobileMenu = ({ selectedPage, setSelectedPage }: Props) => {
 			</button>
 
 			{/* overlay Bg */}
-			{isMenuToggle && (
-				<div
-					className='fixed left-0 top-0 h-full w-full overflow-auto bg-slate-400 opacity-40'
-					onClick={() => setIsMenuToggle(!isMenuToggle)}
-				/>
-			)}
+			<div
+				className={`${
+					isMenuToggle &&
+					`fixed left-0 top-0 h-full w-full overflow-auto bg-slate-400 opacity-40`
+				}`}
+				onClick={() => setIsMenuToggle(!isMenuToggle)}
+			/>
 			{/* Side Menu */}
 			<motion.div initial='closed' animate={isMenuToggle ? 'opened' : 'closed'}>
 				<motion.div

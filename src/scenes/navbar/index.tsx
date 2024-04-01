@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import LogoCircle from '@/assets/logo/dogation-logo-circle.png';
 import Link from './Link';
-import { LinksType, SelectedPage } from '@/types/types';
+import { SelectedPage } from '@/types/types';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import ActionButton from '@/shared/ActionButton';
+import MobileMenu from './MobileMenu';
+import { Links } from './Links';
 
 type Props = {
 	isTopOfPage: boolean;
@@ -13,29 +13,9 @@ type Props = {
 };
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
-	const links: Array<LinksType> = [
-		{
-			id: 1,
-			link: 'Home',
-		},
-		{
-			id: 2,
-			link: 'Services',
-		},
-		{
-			id: 3,
-			link: 'Facilities',
-		},
-		{
-			id: 4,
-			link: 'Contact Us',
-		},
-	];
-
 	const flexBetween = 'flex items-center justify-between';
 	const isAboveMediumScreen = useMediaQuery('(min-width: 1060px');
-	const [isMenuToggle, setIsMenuToggle] = useState<boolean>(false);
-	const navbarBackground = isTopOfPage ? '' : 'bg-light-blue-50 drop-shadow';
+	const navbarBackground = isTopOfPage ? '' : 'bg-light-blue-50';
 
 	return (
 		<nav>
@@ -52,7 +32,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 								<div
 									className={`${flexBetween} gap-8 font-nav-cursive text-lg`}
 								>
-									{links.map(({ id, link }) => (
+									{Links.map(({ id, link }) => (
 										<Link
 											key={id}
 											page={link}
@@ -69,38 +49,17 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 								</div>
 							</div>
 						) : (
-							<button
-								className='rounded-full bg-sun-300 p-2'
-								onClick={() => setIsMenuToggle(!isMenuToggle)}
-							>
-								<Bars3Icon className='h-6 w-6 font-bold text-banana-yellow-200' />
-							</button>
+							<div className='flex w-full items-center justify-end'>
+								<MobileMenu
+									isTopOfPage={isTopOfPage}
+									selectedPage={selectedPage}
+									setSelectedPage={setSelectedPage}
+								/>
+							</div>
 						)}
 					</div>
 				</div>
 			</div>
-
-			{/* Mobile Menu Modal */}
-			{!isAboveMediumScreen && isMenuToggle && (
-				<div className='fixed bottom-0 right-0 z-40 h-full w-[300px] bg-sun-300 drop-shadow-xl'>
-					{/* Close Icon */}
-					<div className='flex justify-end p-12'>
-						<button onClick={() => setIsMenuToggle(!isMenuToggle)}>
-							<XMarkIcon className='h-6 w-6 text-sand-50' />
-						</button>
-					</div>
-					<div className='ml-[33%] flex flex-col gap-10 font-nav-cursive text-2xl'>
-						{links.map(({ id, link }) => (
-							<Link
-								key={id}
-								page={link}
-								selectedPage={selectedPage}
-								setSelectedPage={setSelectedPage}
-							/>
-						))}
-					</div>
-				</div>
-			)}
 		</nav>
 	);
 };

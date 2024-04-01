@@ -76,7 +76,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 								visible: { opacity: 1, y: 0 },
 							}}
 						>
-							<div className='w-full before:absolute before:-right-7 before:-top-24 before:z-[1] md:before:content-dogation-contact'>
+							<div className='w-full before:absolute before:-right-1 before:-top-24 before:z-[1] md:before:content-dogation-contact'>
 								<img
 									src={ContactStanding}
 									alt={ContactStanding}
@@ -110,19 +110,20 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 								</h1>
 
 								<form
-									action='https://formsubmit.co/d8ba071863b209c206352f351fbccf9e'
 									method='POST'
 									target='_blank'
+									action='https://formsubmit.co/d8ba071863b209c206352f351fbccf9e'
 									onSubmit={onSubmit}
 								>
-									<div className='mt-4 grid grid-cols-2 gap-x-3'>
-										<div className={`${formDesignStyle} sm:w-[80%]`}>
+									<div className='sm:flex sm:justify-between'>
+										<div className={`${formDesignStyle} mt-6 sm:w-[40%]`}>
 											<label htmlFor='firstName'></label>
 											<input
 												placeholder='My First Name is'
 												// name='firstName'
 												className={formInputStyle}
 												type='text'
+												autoComplete='on'
 												{...register('firstName', {
 													required: true,
 													maxLength: 100,
@@ -137,13 +138,14 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 												</p>
 											)}
 										</div>
-										<div className={`${formDesignStyle} sm:w-[80%]`}>
+										<div className={`${formDesignStyle} mt-6 sm:w-[40%]`}>
 											<label htmlFor='lastName'></label>
 											<input
 												placeholder='My Last Name is'
 												// name='lastName'
 												className={formInputStyle}
 												type='text'
+												autoComplete='on'
 												{...register('lastName', {
 													required: true,
 													maxLength: 100,
@@ -160,90 +162,91 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 										</div>
 									</div>
 
-									<div className='mt-6'>
-										<div className={`${formDesignStyle} sm:w-[90%]`}>
-											<label htmlFor='phone'></label>
-											<input
-												placeholder='My number is'
-												// name='phone'
-												className={formInputStyle}
-												type='text'
-												{...register('phone', {
-													required: true,
-													pattern: /^0\d{9,10}$/,
-												})}
-											/>
-											{errors.phone && (
-												<p className='mt-1  text-sun-300'>
-													{errors.phone.type === 'required' &&
-														'This field is required.'}
-													{errors.phone.type === 'pattern' &&
-														'Invalid phone number.'}
-												</p>
-											)}
-										</div>
-
-										<div className={`${formDesignStyle} mt-6 sm:w-[90%]`}>
-											<label htmlFor='email' />
-											<input
-												placeholder='My E-Mail is'
-												// name='email'
-												className={formInputStyle}
-												type='text'
-												{...register('email', {
-													required: true,
-													pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-												})}
-											/>
-											{errors.email && (
-												<p className='mt-1  text-sun-300'>
-													{errors.email.type === 'required' &&
-														'This field is required.'}
-													{errors.email.type === 'pattern' &&
-														'Invalid email address.'}
-												</p>
-											)}
-										</div>
-
-										<div className={`${formDesignStyle} mt-6 sm:w-[90%]`}>
-											<label htmlFor='subject'></label>
-											<select
-												// name='subject'
-												className={`${formInputStyle}`}
-												placeholder='Subject line'
-												defaultValue={'DEFAULT'}
-												{...register('subject', {
-													required: true,
-												})}
-												required
-											>
-												<option hidden value=''>
-													What are you expecting from our hotel?
-												</option>
-												<option value='activity'>
-													I'd like to do some activities.
-												</option>
-												<option value='relax'>
-													I'd like to chill out all day.
-												</option>
-												<option value='for dog'>
-													I'd like to do something special for my dog.
-												</option>
-											</select>
-											{errors.subject && (
-												<p className='mt-1 text-sun-300'>
-													{errors.subject.type === 'required' &&
-														'This field is required.'}
-												</p>
-											)}
-										</div>
+									<div className={`${formDesignStyle} mt-6 sm:w-[90%]`}>
+										<label htmlFor='phone'></label>
+										<input
+											placeholder='My number is'
+											// name='phone'
+											className={formInputStyle}
+											type='text'
+											autoComplete='on'
+											{...register('phone', {
+												required: true,
+												pattern:
+													/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i,
+											})}
+										/>
+										{errors.phone && (
+											<p className='mt-1  text-sun-300'>
+												{errors.phone.type === 'required' &&
+													'This field is required.'}
+												{errors.phone.type === 'pattern' &&
+													'Invalid phone number.'}
+											</p>
+										)}
 									</div>
 
-									<div className='group mx-auto mb-12 mt-16 w-full shadow-lg transition duration-500 sm:mb-24 sm:w-[45%]'>
+									<div className={`${formDesignStyle} mt-6 sm:w-[90%]`}>
+										<label htmlFor='email' />
+										<input
+											placeholder='My E-Mail is'
+											// name='email'
+											className={formInputStyle}
+											type='text'
+											autoComplete='on'
+											{...register('email', {
+												required: true,
+												pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+											})}
+										/>
+										{errors.email && (
+											<p className='mt-1  text-sun-300'>
+												{errors.email.type === 'required' &&
+													'This field is required.'}
+												{errors.email.type === 'pattern' &&
+													'Invalid email address.'}
+											</p>
+										)}
+									</div>
+
+									<div className={`${formDesignStyle} mt-6 sm:w-[90%]`}>
+										<label htmlFor='subject'></label>
+										<select
+											// name='subject'
+											className={`${formInputStyle}`}
+											placeholder='Subject line'
+											defaultValue={'DEFAULT'}
+											{...register('subject', {
+												required: true,
+											})}
+											required
+										>
+											<option hidden value=''>
+												What are you expecting ?
+											</option>
+											<option value='activity'>
+												I'd like to do some activities.
+											</option>
+											<option value='relax'>
+												I'd like to chill out all day.
+											</option>
+											<option value='for dog'>
+												I'd like to do something special for my dog.
+											</option>
+										</select>
+										{errors.subject && (
+											<p className='mt-1 text-sun-300'>
+												{errors.subject.type === 'required' &&
+													'This field is required.'}
+											</p>
+										)}
+									</div>
+
+									<div className='hover:translate-y-0.7 group mx-auto mb-12 mt-16 w-full shadow-lg transition duration-500 sm:mb-24 sm:w-[45%]'>
 										<input
 											type='submit'
 											value='Become A Member'
-											className='flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-banana-yellow-50 px-10 py-3 font-title-serif text-sun-300 transition duration-500 group-hover:bg-sun-300 group-hover:text-banana-yellow-50'
+											className='flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-banana-yellow-50 px-10 py-3 font-title-serif text-sun-300 transition duration-500 group-hover:translate-y-0.5 group-hover:bg-sun-300  group-hover:text-banana-yellow-50'
 										/>
 									</div>
 								</form>

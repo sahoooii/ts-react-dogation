@@ -1,6 +1,7 @@
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { SelectedPage } from '@/types/types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { motion } from 'framer-motion';
 
 type Props = {
 	page: string;
@@ -14,18 +15,21 @@ const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
 
 	//to lowercase and delete space
 	const lowerCasePage = page.toLowerCase().replace(/ /g, '') as SelectedPage;
+
 	return (
-		<AnchorLink
-			className={`${
-				selectedPage === lowerCasePage
-					? `${MdTextColor} text-banana-yellow-200`
-					: ''
-			} transition duration-500 hover:scale-110 hover:opacity-50`}
-			href={`#${lowerCasePage}`}
-			onClick={() => setSelectedPage(lowerCasePage)}
-		>
-			{page}
-		</AnchorLink>
+		<motion.div>
+			<AnchorLink
+				className={`${
+					selectedPage === lowerCasePage
+						? `${MdTextColor} text-banana-yellow-200`
+						: ''
+				} transition duration-500 hover:scale-110 hover:opacity-50 `}
+				href={`#${lowerCasePage}`}
+				onClick={() => setSelectedPage(lowerCasePage)}
+			>
+				{page}
+			</AnchorLink>
+		</motion.div>
 	);
 };
 

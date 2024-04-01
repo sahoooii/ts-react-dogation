@@ -1,7 +1,7 @@
 import useMediaQuery from '@/hooks/useMediaQuery';
 import ActionButton from '@/shared/ActionButton';
 import { SelectedPage } from '@/types/types';
-import logo from '@/assets/logo/dogation-logo-green.jpg';
+import logo from '@/assets/logo/dogation-logo.png';
 import tripAdvisor from '@/assets/sponsors/tripadvisor.png';
 import kauai from '@/assets/sponsors/kauai.png';
 import patagonia from '@/assets/sponsors/patagonia.png';

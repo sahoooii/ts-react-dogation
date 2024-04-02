@@ -33,12 +33,16 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 									className={`${flexBetween} gap-8 font-nav-cursive text-lg`}
 								>
 									{Links.map(({ id, link }) => (
-										<Link
+										<li
 											key={id}
-											page={link}
-											selectedPage={selectedPage}
-											setSelectedPage={setSelectedPage}
-										/>
+											className='list-none transition duration-500 hover:scale-110'
+										>
+											<Link
+												page={link}
+												selectedPage={selectedPage}
+												setSelectedPage={setSelectedPage}
+											/>
+										</li>
 									))}
 								</div>
 								{/* Right Side */}

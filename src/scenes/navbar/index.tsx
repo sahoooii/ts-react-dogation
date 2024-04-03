@@ -14,7 +14,7 @@ type Props = {
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 	const flexBetween = 'flex items-center justify-between';
-	const isAboveMediumScreen = useMediaQuery('(min-width: 1060px');
+	const isAboveMediumScreen = useMediaQuery('(min-width: 1060px)');
 	const navbarBackground = isTopOfPage ? '' : 'bg-light-blue-50';
 
 	return (
@@ -25,7 +25,11 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 				<div className={`${flexBetween} mx-auto w-5/6`}>
 					<div className={`${flexBetween} w-full gap-16`}>
 						{/* Left Side */}
-						<img src={LogoCircle} alt='logo' className='h-20 w-20' />
+						<img
+							src={LogoCircle}
+							alt='logo'
+							className='h-20 w-20 object-cover'
+						/>
 
 						{isAboveMediumScreen ? (
 							<div className={`${flexBetween} w-full`}>

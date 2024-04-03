@@ -11,10 +11,11 @@ function App() {
 	const [selectedPage, setSelectedPage] = useState<SelectedPage>(
 		SelectedPage.Home
 	);
-	const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
-	// handle nav bg
-  useEffect(() => {
+	// handle nav bg color
+	const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
+	
+	useEffect(() => {
 		const handleScroll = () => {
 			if (window.scrollY === 0) {
 				setIsTopOfPage(true);

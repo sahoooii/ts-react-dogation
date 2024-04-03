@@ -44,7 +44,7 @@ const Home = ({ setSelectedPage }: Props) => {
 					>
 						<div className='relative'>
 							<div className='before:absolute before:-top-16 before:left-40 md:before:content-pow '>
-								<img src={logo} alt='dogation green logo' />
+								<img src={logo} alt='dogation logo' />
 							</div>
 						</div>
 

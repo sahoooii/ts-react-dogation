@@ -3,17 +3,7 @@ import { motion } from 'framer-motion';
 import { faMartiniGlassCitrus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Facility from './Facility';
-import { FacilitiesLists } from './FacilitiesLists';
 import TitleText from '@/shared/TitleText';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { IonIcon } from '@ionic/react';
-import { chevronBack, chevronForward } from 'ionicons/icons';
-import { EffectCoverflow, Pagination, Navigation } from 'swiper';
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 type Props = {
 	setSelectedPage: (value: SelectedPage) => void;
@@ -56,57 +46,8 @@ const Facilities = ({ setSelectedPage }: Props) => {
 					</div>
 				</motion.div>
 
-				{/* swiper images */}
-				<Swiper
-					effect={'coverflow'}
-					grabCursor={true}
-					centeredSlides={true}
-					loop={true}
-					slidesPerView={'auto'}
-					coverflowEffect={{
-						rotate: 10,
-						stretch: 0,
-						depth: 100,
-						modifier: 2.5,
-						slideShadows: false,
-					}}
-					pagination={{ el: '.swiper-pagination', clickable: true }}
-					navigation={{
-						nextEl: '.swiper-button-next',
-						prevEl: '.swiper-button-prev',
-					}}
-					modules={[EffectCoverflow, Pagination, Navigation]}
-					className='relative h-[27rem] w-full pt-8 sm:h-[34rem] md:h-[37rem]'
-				>
-					{FacilitiesLists.map((facility, index) => (
-						<SwiperSlide
-							key={index}
-							className='relative h-[20rem] w-[17rem] sm:h-[26rem] sm:w-[30rem] md:h-[30rem] md:w-[34rem]'
-						>
-							<Facility
-								title={facility.title}
-								description={facility.description}
-								image={facility.image}
-							/>
-						</SwiperSlide>
-					))}
-					{/* slider-controller */}
-					<div className='relative bottom-12 flex items-center justify-center'>
-						<div className='swiper-button-prev group left-[20%] h-14 w-14 translate-x-[-20%] rounded-full bg-light-green-100 drop-shadow-md transition after:hidden after:content-none sm:left-[28%] sm:translate-x-[-28%] md:left-[35%] md:translate-x-[-35%]'>
-							<IonIcon
-								icon={chevronBack}
-								className='text-4xl text-white opacity-60 transition duration-500 group-hover:-translate-x-2'
-							></IonIcon>
-						</div>
-						<div className='swiper-button-next group left-[80%] h-14 w-14 translate-x-[-80%] rounded-full bg-light-green-100 drop-shadow-md transition after:hidden after:content-none sm:left-[72%] sm:translate-x-[-72%] md:left-[65%] md:translate-x-[-65%]'>
-							<IonIcon
-								icon={chevronForward}
-								className='text-4xl text-white opacity-60 transition duration-500 group-hover:translate-x-2'
-							></IonIcon>
-						</div>
-						<div className='swiper-pagination relative top-1 w-60 drop-shadow-md [&_.swiper-pagination-bullet-active]:drop-shadow-md'></div>
-					</div>
-				</Swiper>
+				{/* Swiper */}
+				<Facility />
 			</motion.div>
 		</section>
 	);

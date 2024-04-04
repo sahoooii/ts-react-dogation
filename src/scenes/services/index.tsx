@@ -1,20 +1,12 @@
-import { SelectedPage, ServicesType } from '@/types/types';
+import { SelectedPage } from '@/types/types';
 import { motion } from 'framer-motion';
 import TitleText from '@/shared/TitleText';
 import { faUmbrellaBeach } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Service from './Service';
-import { ServicesLists } from './ServicesLists';
 
 type Props = {
 	setSelectedPage: (value: SelectedPage) => void;
-};
-
-const container = {
-	hidden: {},
-	visible: {
-		transition: { staggerChildren: 0.3 },
-	},
 };
 
 const Services = ({ setSelectedPage }: Props) => {
@@ -50,23 +42,8 @@ const Services = ({ setSelectedPage }: Props) => {
 						</p>
 					</motion.div>
 
-					{/* Services */}
-					<motion.div
-						className='mt-24 items-center justify-center sm:mt-12 sm:grid sm:grid-cols-2 sm:gap-12'
-						initial='hidden'
-						whileInView='visible'
-						viewport={{ once: true, amount: 0.5 }}
-						variants={container}
-					>
-						{ServicesLists.map((service: ServicesType) => (
-							<Service
-								key={service.id}
-								icon={service.icon}
-								title={service.title}
-								description={service.description}
-							/>
-						))}
-					</motion.div>
+					{/* Services Lists */}
+					<Service />
 				</motion.div>
 			</div>
 		</section>

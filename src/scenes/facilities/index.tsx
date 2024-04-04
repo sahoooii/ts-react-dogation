@@ -5,16 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Facility from './Facility';
 import { FacilitiesLists } from './FacilitiesLists';
 import TitleText from '@/shared/TitleText';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IonIcon } from '@ionic/react';
 import { chevronBack, chevronForward } from 'ionicons/icons';
+import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 
 type Props = {
 	setSelectedPage: (value: SelectedPage) => void;
@@ -65,10 +64,10 @@ const Facilities = ({ setSelectedPage }: Props) => {
 					loop={true}
 					slidesPerView={'auto'}
 					coverflowEffect={{
-						rotate: 50,
+						rotate: 10,
 						stretch: 0,
 						depth: 100,
-						modifier: 1,
+						modifier: 2.5,
 						slideShadows: false,
 					}}
 					pagination={{ el: '.swiper-pagination', clickable: true }}

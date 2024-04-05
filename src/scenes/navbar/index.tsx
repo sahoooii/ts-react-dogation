@@ -5,6 +5,7 @@ import useMediaQuery from '@/hooks/useMediaQuery';
 import ActionButton from '@/shared/ActionButton';
 import MobileMenu from './MobileMenu';
 import { Links } from './Links';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 type Props = {
 	isTopOfPage: boolean;
@@ -14,7 +15,7 @@ type Props = {
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 	const flexBetween = 'flex items-center justify-between';
-	const isAboveMediumScreen = useMediaQuery('(min-width: 1060px');
+	const isAboveMediumScreen = useMediaQuery('(min-width: 1060px)');
 	const navbarBackground = isTopOfPage ? '' : 'bg-light-blue-50';
 
 	return (
@@ -25,7 +26,13 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 				<div className={`${flexBetween} mx-auto w-5/6`}>
 					<div className={`${flexBetween} w-full gap-16`}>
 						{/* Left Side */}
-						<img src={LogoCircle} alt='logo' className='h-20 w-20' />
+						<AnchorLink href={`#${SelectedPage.Home}`}>
+							<img
+								src={LogoCircle}
+								alt='logo'
+								className='h-20 w-20 object-contain'
+							/>
+						</AnchorLink>
 
 						{isAboveMediumScreen ? (
 							<div className={`${flexBetween} w-full`}>
@@ -33,12 +40,16 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 									className={`${flexBetween} gap-8 font-nav-cursive text-lg`}
 								>
 									{Links.map(({ id, link }) => (
-										<Link
+										<li
 											key={id}
-											page={link}
-											selectedPage={selectedPage}
-											setSelectedPage={setSelectedPage}
-										/>
+											className='list-none transition duration-500 hover:scale-110'
+										>
+											<Link
+												page={link}
+												selectedPage={selectedPage}
+												setSelectedPage={setSelectedPage}
+											/>
+										</li>
 									))}
 								</div>
 								{/* Right Side */}

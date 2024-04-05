@@ -44,7 +44,7 @@ const Home = ({ setSelectedPage }: Props) => {
 					>
 						<div className='relative'>
 							<div className='before:absolute before:-top-16 before:left-40 md:before:content-pow '>
-								<img src={logo} alt='dogation green logo' />
+								<img src={logo} alt='dogation logo' />
 							</div>
 						</div>
 
@@ -107,7 +107,7 @@ const Home = ({ setSelectedPage }: Props) => {
 					<img
 						src={topImg}
 						alt='Top Image'
-						className='h-[530px] w-[360px] rounded-t-[400px] shadow-2xl transition duration-500 hover:saturate-200 hover:filter md:h-[500px] md:w-[360px] md:rounded-lg'
+						className='h-[530px] w-[360px] rounded-t-[400px] shadow-2xl transition duration-500 hover:saturate-200 hover:filter md:h-[500px] md:w-[360px] md:rounded-lg object-cover'
 					/>
 				</motion.div>
 			</motion.div>

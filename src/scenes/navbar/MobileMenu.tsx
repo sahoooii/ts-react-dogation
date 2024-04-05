@@ -19,7 +19,7 @@ const MobileMenu = ({ selectedPage, setSelectedPage }: Props) => {
 			y: '0%',
 			transition: {
 				delay: 0.15,
-				duration: 1.1,
+				duration: 0.7,
 				ease: [0.74, 0, 0.19, 1.02],
 			},
 		},
@@ -27,7 +27,7 @@ const MobileMenu = ({ selectedPage, setSelectedPage }: Props) => {
 			y: '-100%',
 			transition: {
 				delay: 0.35,
-				duration: 0.63,
+				duration: 0.7,
 				ease: [0.74, 0, 0.19, 1.02],
 			},
 		},
@@ -36,7 +36,7 @@ const MobileMenu = ({ selectedPage, setSelectedPage }: Props) => {
 	const ulVariant = {
 		opened: {
 			transition: {
-				delayChildren: 1,
+				delayChildren: 0.8,
 				staggerChildren: 0.18,
 			},
 		},
@@ -77,12 +77,13 @@ const MobileMenu = ({ selectedPage, setSelectedPage }: Props) => {
 			</button>
 
 			{/* overlay Bg */}
-			{isMenuToggle && (
-				<div
-					className='fixed left-0 top-0 h-full w-full overflow-auto bg-slate-400 opacity-40'
-					onClick={() => setIsMenuToggle(!isMenuToggle)}
-				/>
-			)}
+			<div
+				className={`${
+					isMenuToggle &&
+					`fixed left-0 top-0 h-full w-full overflow-auto bg-slate-400 opacity-40`
+				}`}
+				onClick={() => setIsMenuToggle(!isMenuToggle)}
+			/>
 			{/* Side Menu */}
 			<motion.div initial='closed' animate={isMenuToggle ? 'opened' : 'closed'}>
 				<motion.div

@@ -23,7 +23,7 @@ const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
 					selectedPage === lowerCasePage
 						? `${MdTextColor} text-banana-yellow-200`
 						: ''
-				} transition duration-500 hover:scale-110 hover:opacity-50 `}
+				} transition duration-500 hover:scale-125 hover:opacity-50 `}
 				href={`#${lowerCasePage}`}
 				onClick={() => setSelectedPage(lowerCasePage)}
 			>

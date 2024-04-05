@@ -2,7 +2,7 @@ import LogoCircle from '@/assets/logo/dogation-logo-circle.png';
 
 const Footer = () => {
 	return (
-		<footer className='bg-gradient-ocean py-16'>
+		<footer className='bg-gradient-ocean md:pt-16 sm:pb-36 sm:pt-8 pt-2 pb-24 text-white'>
 			<div className='mx-auto w-5/6 justify-center gap-16 md:flex'>
 				<div className='mt-10 basis-1/2 md:mt-0'>
 					<img src={LogoCircle} alt='logo' className='h-14 w-14' />

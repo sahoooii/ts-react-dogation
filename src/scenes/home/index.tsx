@@ -107,7 +107,7 @@ const Home = ({ setSelectedPage }: Props) => {
 					<img
 						src={topImg}
 						alt='Top Image'
-						className='h-[530px] w-[360px] rounded-t-[400px] shadow-2xl transition duration-500 hover:saturate-200 hover:filter md:h-[500px] md:w-[360px] md:rounded-lg'
+						className='h-[530px] w-[360px] rounded-t-[400px] shadow-2xl transition duration-500 hover:saturate-200 hover:filter md:h-[500px] md:w-[360px] md:rounded-lg object-cover'
 					/>
 				</motion.div>
 			</motion.div>

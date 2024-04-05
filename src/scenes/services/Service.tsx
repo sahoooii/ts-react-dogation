@@ -20,7 +20,7 @@ const Service = () => {
 			className='items-center justify-center sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-12'
 			initial='hidden'
 			whileInView='visible'
-			viewport={{ once: true, amount: 0.5 }}
+			viewport={{ once: true, amount: 0.3 }}
 			variants={container}
 		>
 			{ServicesLists.map((service: ServicesType) => (

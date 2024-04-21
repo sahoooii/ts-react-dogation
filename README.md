@@ -1,6 +1,6 @@
 # ts-react-dogation
 
-<img src="https://img.shields.io/badge/-React-555.svg?logo=react&style=flat"> <img src="https://img.shields.io/badge/-TypeScript-3178C6.svg?logo=typescript&style=flat&logoColor=white"> <img src="https://img.shields.io/badge/-Tailwind_CSS-06B6D4.svg?logo=tailwindcss&style=flat&logoColor=ff0"> <img src="https://img.shields.io/badge/-Motion-0055ff.svg?logo=framer&style=flat-square"> <img src="https://img.shields.io/badge/-Swiper-0055ff.svg?logo=swiper&style=flat&logoColor=white">
+<img src="https://img.shields.io/badge/-React-555.svg?logo=react&style=flat"> <img src="https://img.shields.io/badge/-TypeScript-3178C6.svg?logo=typescript&style=flat&logoColor=white"> <img src="https://img.shields.io/badge/-Tailwind_CSS-06B6D4.svg?logo=tailwindcss&style=flat&logoColor=ff0"> <img src="https://img.shields.io/badge/-Motion-0055ff.svg?logo=framer&style=flat-square"> <img src="https://img.shields.io/badge/-Swiper-0055ff.svg?logo=swiper&style=flat&logoColor=white"> <img src="https://img.shields.io/badge/-React_Hook_Form-EC5990.svg?logo=reacthookform&style=flat&logoColor=fff">
 <p>etc...</p>
 
 ## Link

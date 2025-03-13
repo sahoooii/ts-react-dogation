@@ -11,7 +11,7 @@ type Props = {
 
 const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
 	const isAboveMediumScreen = useMediaQuery('(min-width: 1060px');
-	const MdTextColor = isAboveMediumScreen && 'text-sun-300';
+	const MdTextColor = isAboveMediumScreen && 'text-sun-300 text-3xl';
 
 	//to lowercase and delete space
 	const lowerCasePage = page.toLowerCase().replace(/ /g, '') as SelectedPage;
@@ -22,7 +22,7 @@ const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
 				className={`${
 					selectedPage === lowerCasePage
 						? `${MdTextColor} text-banana-yellow-200`
-						: ''
+						: 'text-2xl'
 				} transition duration-500 hover:scale-125 hover:opacity-50 `}
 				href={`#${lowerCasePage}`}
 				onClick={() => setSelectedPage(lowerCasePage)}

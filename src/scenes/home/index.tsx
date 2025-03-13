@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMartiniGlassCitrus, faPaw } from '@fortawesome/free-solid-svg-icons';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { motion } from 'framer-motion';
+import Tagline from '@/shared/Tagline';
 
 type Props = {
 	setSelectedPage: (value: SelectedPage) => void;
@@ -21,7 +22,7 @@ const Home = ({ setSelectedPage }: Props) => {
 	return (
 		<section
 			id='home'
-			className='gap-16 bg-light-green-20 py-10 md:h-full md:pb-0'
+			className='gap-16 bg-light-green-20 py-10 md:min-h-screen md:pb-0'
 		>
 			{/* Img and Main Header */}
 			<motion.div
@@ -42,30 +43,30 @@ const Home = ({ setSelectedPage }: Props) => {
 							visible: { opacity: 1, x: 0 },
 						}}
 					>
-						<div className='relative'>
-							<div className='before:absolute before:-top-16 before:left-40 md:before:content-pow '>
-								<img src={logo} alt='dogation logo' />
-							</div>
+						<div className='mt-8 flex justify-center'>
+							<img src={logo} alt='dogation logo' />
 						</div>
 
-						<p className='mt-8 text-sm leading-5'>
-							This place is for All dogs and All dog lovers. You can spend time
-							all day with your buddy. Our concepts are vacation and dog. Yes,
-							"DOGATION"!!
+						<div className='mt-6 text-xl leading-relaxed sm:leading-8'>
+							This is a paradise for all dogs and dog lovers!
 							<br />
-							We are located in central Waikiki. The beach is just around the
-							corner. We have a fancy cafe and bar and some more. <br />
-							Let's chill out on your next vacation{' '}
+							Here, you can spend the entire day with your furry friend. Our
+							concept blends vacation and dogs!
+							<Tagline>- Welcome to DOGATION -</Tagline>
+							Located in the heart of Waikiki, the beach is just steps away.
+							Enjoy our stylish café, bar, and more.
+							<br />
+							Relax and make unforgettable memories on your next vacation!{' '}
 							<FontAwesomeIcon
 								icon={faMartiniGlassCitrus}
-								className='align-baseline text-sun-300'
+								className='align-baseline text-[24px] text-sun-300'
 							/>
-						</p>
+						</div>
 					</motion.div>
 
 					{/* Actions */}
 					<motion.div
-						className='mt-8 flex items-center gap-8'
+						className='mb-12 mt-8 flex items-center gap-8'
 						initial='hidden'
 						whileInView='visible'
 						viewport={{ once: true, amount: 0.5 }}
@@ -79,7 +80,7 @@ const Home = ({ setSelectedPage }: Props) => {
 							Join Now
 						</ActionButton>
 						<AnchorLink
-							className='group font-title-serif text-sm font-bold text-light-blue-100  underline transition duration-500 hover:text-sun-300'
+							className='group font-title-serif text-lg font-bold text-light-blue-100 underline transition duration-500 hover:text-sun-300'
 							onClick={() => setSelectedPage(SelectedPage.Services)}
 							href={`#${SelectedPage.Services}`}
 						>
@@ -107,16 +108,16 @@ const Home = ({ setSelectedPage }: Props) => {
 					<img
 						src={topImg}
 						alt='Top Image'
-						className='h-[530px] w-[360px] rounded-t-[400px] shadow-2xl transition duration-500 hover:saturate-200 hover:filter md:h-[500px] md:w-[360px] md:rounded-lg object-cover'
+						className='h-[530px] w-[360px] rounded-t-[400px] object-cover shadow-2xl transition duration-500 hover:saturate-200 hover:filter md:h-[500px] md:w-[360px] md:rounded-lg'
 					/>
 				</motion.div>
 			</motion.div>
 
 			{/* Sponsors */}
 			{isAboveMediaScreen && (
-				<div className='h-[200px] w-full bg-light-blue-100 py-8'>
+				<div className='min-h-[250px] w-full bg-light-blue-100'>
 					<div className='mx-auto w-5/6'>
-						<div className='flex items-center justify-between gap-8'>
+						<div className='flex min-h-[250px] items-center justify-between gap-6'>
 							<img src={tripAdvisor} alt='hawaii flag' />
 							<img src={kauai} alt='kauai' />
 							<img src={wholeFoods} alt='wholeFoods' />

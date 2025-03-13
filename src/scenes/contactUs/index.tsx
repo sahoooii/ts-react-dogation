@@ -6,6 +6,7 @@ import TitleText from '@/shared/TitleText';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ContactForm from './ContactForm';
+import Tagline from '@/shared/Tagline';
 
 type Props = {
 	setSelectedPage: (value: SelectedPage) => void;
@@ -31,21 +32,23 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 						}}
 					>
 						<TitleText>
-							See <span className='text-dark-blue-50'>You </span> Real{' '}
-							<span className='text-dark-blue-50'>Soon </span>
-							<FontAwesomeIcon
-								icon={faPaw}
-								className='align-baseline text-light-green-20'
-							/>
+							<span className='text-dark-blue-50'>Contact </span>US{' '}
+							<FontAwesomeIcon icon={faPaw} className='text-light-green-20' />
 						</TitleText>
-						<p className='mt-8 text-sm leading-5'>
-							Dogation is a membership only. But don't worry! It's completely
-							free to become a member. We want to tell you our information and
-							send coupons. You can choose a free membership or an executive
-							membership. You can enough enjoy a free membership. But executive
-							members always get a free welcome drink and everything membership
-							price. It's only $50 per year and pays only one person!
-						</p>
+
+						<div className='my-5 w-full text-xl leading-relaxed sm:leading-8'>
+							<Tagline>- Dogation is a members-only resort -</Tagline>
+							But joining is completely free! As a member, you'll receive
+							exclusive updates and special coupons. Choose between a Free
+							Membership or an Executive Membership.
+							<br />
+							The free plan offers plenty of perks, while Executive Members
+							enjoy a complimentary welcome drink and exclusive member pricing
+							on everything.
+							<br />
+							Upgrade for just $50 per year, and only one person in your group
+							needs to join!{' '}
+						</div>
 					</motion.div>
 
 					{/* Form and Image */}

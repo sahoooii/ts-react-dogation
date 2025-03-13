@@ -33,12 +33,12 @@ const ContactForm = () => {
 			}}
 		>
 			<div className='mx-auto mt-6 border-2 border-light-green-20 bg-sand-80 p-10 shadow-lg'>
-				<h1 className='pb-2 pt-5 text-center text-xl font-bold sm:pb-6 sm:pt-10 sm:text-4xl'>
+				<h1 className='flex items-center justify-center pb-2 pt-5 text-center text-2xl font-bold sm:pb-6 sm:pt-10 sm:text-4xl'>
 					<FontAwesomeIcon
 						icon={faBone}
 						className='sm:fa-lg fa-xs mr-2 text-light-green-20 sm:mr-4'
-					/>
-					Dogation Member
+					/>{' '}
+					Membership{' '}
 					<FontAwesomeIcon
 						icon={faBone}
 						className='sm:fa-lg fa-xs ml-2 text-light-green-20 sm:ml-4'

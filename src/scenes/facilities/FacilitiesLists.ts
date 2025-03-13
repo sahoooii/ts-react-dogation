@@ -9,32 +9,46 @@ import trimming from '@/assets/facilities/trimming.jpg';
 export const FacilitiesLists: Array<FacilitiesType> = [
 	{
 		title: 'Dog Run',
-		description:
-			"We have many expansive dog runs. There are four types of dog runs. These are  Large breeds, Medium breeds, Small breeds, and For all dogs. There is also a pond to swim each dog runs. When your buddy is wet, don't worry, we have a self-shampoo room!",
+		description: [
+			'We have spacious dog runs designed for different breeds.',
+			'There are four areas: Large, Medium, Small breeds, and an All-Dogs section. 🐶',
+			'Each run even has a small pond where dogs can cool off! If your buddy gets wet, don’t worry—we have a self-service shampoo room to freshen them up.',
+		],
 		image: dogRunJump,
 	},
 	{
 		title: 'Photo Studio',
-		description:
-			'How cute this dog is! Yes, this is my dog Haha. We have a perfect photo studio. Selfie style is open 24/7. You can take a picture anytime you want! Do you want to take an anniversary photo? Of course, we have a pro cameraman too! You can make a reservation using Dogation app.',
+		description: [
+			'Capture your dog’s most adorable moments! 📸',
+			'Our 24/7 selfie studio lets you snap pictures whenever you want.',
+			'Looking for something extra special? Book a professional photo session through the Dogation app and create a perfect memory!',
+		],
 		image: photoStudio,
 	},
 	{
 		title: 'Trimming Salon',
-		description:
-			'We have a cute trimming salon right next to a Photo studio. When your buddy gets dirty, you can ask trimmers to clean. To make a reservation, use our Dogation App. We have many courses you can pick from them. Also, we have a self-shampoo room!',
+		description: [
+			'Right next to the Photo Studio, our Trimming Salon is here to keep your dog looking fresh and clean. ✂️',
+			'Need a quick touch-up? Our skilled trimmers offer various grooming courses, all bookable through the Dogation App. Prefer to do it yourself? Check out our self-service shampoo station! 🧴',
+		],
 		image: trimming,
 	},
 	{
 		title: 'Training Class',
-		description:
-			'There is the Training room. Many kinds of dogs learn together just like this. We make an original curriculum for each dog. We have two courses, a Nursery course and a Play course which is a Nursery course teaching basic commands to advanced ones. And a Play course is just having fun with other dogs! Of course, trainers take a walk between both courses.',
+		description: [
+			'In our Training Room, dogs of all sizes learn in a fun and structured way. 🐶',
+			'・Nursery Course: Covers basic to advanced commands.',
+			'・Play Course: Focuses on socialization and playtime.',
+			'Trainers also take dogs for walks to reinforce real-world learning.',
+		],
 		image: training,
 	},
 	{
 		title: 'Dog Cafe',
-		description:
-			'We have a stylish dog cafe. We have a great chef and barista. They cook for you and your best friend! During the daytime, there is also a coworking space. You do your job during the day. And in the nighttime, we are changing a fancy Bar! Of course, you can take your buddy there. We make a Mocktail for your buddy!',
+		description: [
+			'A stylish Dog Café by day, a cozy bar by night! 🍽️☕ Enjoy delicious meals crafted for both you and your furry friend.',
+			'Need a workspace? Our café doubles as a co-working spot. In the evening, unwind at the bar with your dog—yes, we even serve mocktails for pups! 🐾🍹',
+		],
 		image: dogCafe,
 	},
 ];

@@ -12,10 +12,10 @@ import 'swiper/css/pagination';
 import { FacilitiesLists } from './FacilitiesLists';
 
 const Facility = () => {
-	const overlayStyles = `p-4 absolute z-30 flex flex-col whitespace-normal bg-light-blue-50 text-center opacity-0 transition items-center justify-center duration-500 hover:opacity-90`;
+	const overlayStyles = `py-12 px-10 sm:px-12 absolute z-30 flex flex-col whitespace-normal bg-light-blue-50 text-center opacity-0 transition items-center justify-center duration-500 hover:opacity-90`;
 
 	const imagesSize =
-		'h-[18rem] w-[17rem] rounded-3xl sm:shadow-2xl shadow-l sm:h-[26rem] sm:w-[30rem] md:h-[30rem] md:w-[34rem] object-cover';
+		'h-[30rem] w-[24rem] rounded-3xl sm:shadow-2xl shadow-l sm:h-[30rem] sm:w-[34rem] object-cover';
 
 	return (
 		<motion.div
@@ -47,23 +47,38 @@ const Facility = () => {
 					prevEl: '.swiper-button-prev',
 				}}
 				modules={[EffectCoverflow, Pagination, Navigation]}
-				className='relative h-[27rem] w-full pt-8 sm:h-[34rem] md:h-[37rem]'
+				className='relative w-full overflow-visible pt-8'
+				// className='relative h-[27rem] w-full overflow-visible pt-8 sm:h-[30rem] md:h-[37rem]'
 			>
 				{FacilitiesLists.map((facility, index) => (
 					<SwiperSlide
-						key={index}
-						className='relative h-[20rem] w-[17rem] sm:h-[26rem] sm:w-[30rem] md:h-[30rem] md:w-[34rem]'
+						key={`${index}-${facility.title}`}
+						className='relative h-[30rem] w-[24rem] sm:h-[26rem] sm:w-[30rem] md:h-[30rem] md:w-[34rem]'
 					>
 						<li
-							className={`${imagesSize} relative inline-block h-[20rem] w-[17rem] rounded-3xl`}
+							className={`${imagesSize} relative inline-block h-[30rem] w-[24rem] rounded-3xl`}
 						>
 							<div className={`${overlayStyles} ${imagesSize}`}>
-								<h4 className='-mt-4 font-title-serif text-lg font-bold sm:text-3xl '>
+								<h4 className='-mt-4 font-title-serif text-3xl font-bold sm:text-4xl '>
 									{facility.title}
 								</h4>
-								<p className='sm:text-md mt-3 text-xs sm:mt-6 sm:text-base'>
+								{/* <p className='sm:text-md mt-3 text-lg leading-relaxed sm:mt-6 sm:leading-8 text-start'>
 									{facility.description}
-								</p>
+								</p> */}
+								{Array.isArray(facility.description) ? (
+									<div className='mt-3'>
+										{facility.description.map((text, index) => (
+											<p
+												key={index}
+												className='sm:text-md mt-3 text-start text-lg sm:text-xl leading-relaxed sm:mt-6 sm:leading-8 mb-2'
+											>
+												{text}
+											</p>
+										))}
+									</div>
+								) : (
+									<p>{facility.description}</p>
+								)}
 							</div>
 							<img
 								src={facility.image}
@@ -74,14 +89,14 @@ const Facility = () => {
 					</SwiperSlide>
 				))}
 				{/* slider-controller */}
-				<div className='relative bottom-12 flex items-center justify-center'>
-					<div className='swiper-button-prev group left-[20%] h-14 w-14 translate-x-[-20%] rounded-full bg-light-green-100 drop-shadow-md transition after:hidden after:content-none sm:left-[28%] sm:translate-x-[-28%] md:left-[35%] md:translate-x-[-35%]'>
+				<div className='absolute -bottom-8 sm:-bottom-40 md:-bottom-24 left-1/2 -mb-12 flex w-full -translate-x-1/2 items-center justify-center gap-6 sm:mb-10 md:mb-6'>
+					<div className='swiper-button-prev group left-[20%] flex h-16 w-16 translate-x-[-20%] items-center justify-center rounded-full bg-light-green-100 drop-shadow-md transition after:hidden after:content-none sm:left-[28%] sm:translate-x-[-28%] md:left-[35%] md:translate-x-[-35%]'>
 						<IonIcon
 							icon={chevronBack}
 							className='text-4xl text-white opacity-60 transition duration-500 group-hover:-translate-x-2'
 						></IonIcon>
 					</div>
-					<div className='swiper-button-next group left-[80%] h-14 w-14 translate-x-[-80%] rounded-full bg-light-green-100 drop-shadow-md transition after:hidden after:content-none sm:left-[72%] sm:translate-x-[-72%] md:left-[65%] md:translate-x-[-65%]'>
+					<div className='swiper-button-next group left-[80%] flex h-16 w-16 translate-x-[-80%] items-center justify-center rounded-full bg-light-green-100 drop-shadow-md transition after:hidden after:content-none sm:left-[72%] sm:translate-x-[-72%] md:left-[65%] md:translate-x-[-65%]'>
 						<IonIcon
 							icon={chevronForward}
 							className='text-4xl text-white opacity-60 transition duration-500 group-hover:translate-x-2'

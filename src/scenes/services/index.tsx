@@ -1,9 +1,10 @@
 import { SelectedPage } from '@/types/types';
 import { motion } from 'framer-motion';
 import TitleText from '@/shared/TitleText';
-import { faUmbrellaBeach } from '@fortawesome/free-solid-svg-icons';
+import { faBone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Service from './Service';
+import Tagline from '@/shared/Tagline';
 
 type Props = {
 	setSelectedPage: (value: SelectedPage) => void;
@@ -18,7 +19,6 @@ const Services = ({ setSelectedPage }: Props) => {
 				>
 					{/* Header */}
 					<motion.div
-						className='md:my-5 md:w-3/5'
 						initial='hidden'
 						whileInView='visible'
 						viewport={{ once: true, amount: 0.5 }}
@@ -28,18 +28,23 @@ const Services = ({ setSelectedPage }: Props) => {
 							visible: { opacity: 1, x: 0 },
 						}}
 					>
-						<TitleText>
-							Not Only Chill Out{' '}
-							<FontAwesomeIcon
-								icon={faUmbrellaBeach}
-								className='align-baseline text-light-green-100'
-							/>
-						</TitleText>
-						<p className='my-5 text-sm leading-5'>
-							Dogation is not only for chilling out. We have many services.
-							<br />
-							You and your buddy have an unforgettable time.
-						</p>
+						<div className='flex flex-col items-center justify-center md:w-3/5 md:items-start'>
+							<TitleText>
+								<span className='text-dark-blue-50'>Our </span>Services{' '}
+								<FontAwesomeIcon
+									icon={faBone}
+									className='text-light-green-100'
+								/>
+							</TitleText>
+							<div className='my-5 w-full text-xl leading-relaxed sm:leading-8'>
+								<Tagline>- UNFORGETTABLE EXPERIENCE -</Tagline>
+								<p>
+									Dogation isn’t just a place to relax. With our unique
+									services, you and your buddy will create unforgettable
+									memories together.
+								</p>
+							</div>
+						</div>
 					</motion.div>
 
 					{/* Services Lists */}

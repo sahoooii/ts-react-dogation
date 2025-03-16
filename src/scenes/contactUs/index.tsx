@@ -21,7 +21,8 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 				>
 					{/* Header */}
 					<motion.div
-						className='md:w-3/5'
+						// className='md:w-3/5'
+						className='w-full'
 						initial='hidden'
 						whileInView='visible'
 						viewport={{ once: true, amount: 0.5 }}
@@ -31,23 +32,27 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 							visible: { opacity: 1, x: 0 },
 						}}
 					>
-						<TitleText>
-							<span className='text-dark-blue-50'>Contact </span>US{' '}
-							<FontAwesomeIcon icon={faPaw} className='text-light-green-20' />
-						</TitleText>
+						<div className='flex flex-col items-center justify-center md:items-start'>
+							<TitleText>
+								<span className='text-dark-blue-50'>Contact </span>US{' '}
+								<FontAwesomeIcon icon={faPaw} className='text-light-green-20' />
+							</TitleText>
 
-						<div className='my-5 w-full text-xl leading-relaxed sm:leading-8'>
-							<Tagline>- Dogation is a members-only resort -</Tagline>
-							But joining is completely free! As a member, you'll receive
-							exclusive updates and special coupons. Choose between a Free
-							Membership or an Executive Membership.
-							<br />
-							The free plan offers plenty of perks, while Executive Members
-							enjoy a complimentary welcome drink and exclusive member pricing
-							on everything.
-							<br />
-							Upgrade for just $50 per year, and only one person in your group
-							needs to join!{' '}
+							<div className='my-5'>
+								<Tagline>- Dogation is a members-only resort -</Tagline>
+							</div>
+							<div className='my-2 w-full md:px-4 px-2 text-xl leading-relaxed sm:leading-8'>
+								But joining is completely free! As a member, you'll receive
+								exclusive updates and special coupons. Choose between a Free
+								Membership or an Executive Membership.
+								<br />
+								The free plan offers plenty of perks, while Executive Members
+								enjoy a complimentary welcome drink and exclusive member pricing
+								on everything.
+								<br />
+								Upgrade for just $50 per year, and only one person in your group
+								needs to join!{' '}
+							</div>
 						</div>
 					</motion.div>
 

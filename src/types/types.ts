@@ -19,6 +19,6 @@ export interface ServicesType {
 
 export interface FacilitiesType {
 	title: string;
-	description: string;
+	description: string[];
 	image: string;
 }

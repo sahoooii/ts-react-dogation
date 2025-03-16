@@ -6,6 +6,7 @@ import ActionButton from '@/shared/ActionButton';
 import MobileMenu from './MobileMenu';
 import { Links } from './Links';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { useEffect, useState } from 'react';
 
 type Props = {
 	isTopOfPage: boolean;
@@ -18,13 +19,24 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 	const isAboveMediumScreen = useMediaQuery('(min-width: 1060px)');
 	const navbarBackground = isTopOfPage ? '' : 'bg-light-blue-50';
 
+	const [isLoaded, setIsLoaded] = useState<boolean>(false);
+
+	// After load a page, show hamburger icon
+	useEffect(() => {
+		setIsLoaded(true);
+	}, []);
+
 	return (
 		<nav>
 			<div
 				className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}
 			>
 				<div className={`${flexBetween} mx-auto w-5/6`}>
-					<div className={`${flexBetween} w-full gap-16`}>
+					<div
+						className={`${flexBetween} w-full gap-16 duration-500 ${
+							isLoaded ? 'opacity-100' : 'opacity-0'
+						}`}
+					>
 						{/* Left Side */}
 						<AnchorLink href={`#${SelectedPage.Home}`}>
 							<img
@@ -37,7 +49,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 						{isAboveMediumScreen ? (
 							<div className={`${flexBetween} w-full`}>
 								<div
-									className={`${flexBetween} gap-8 font-nav-cursive text-lg`}
+									className={`${flexBetween} gap-8 font-title-serif text-lg`}
 								>
 									{Links.map(({ id, link }) => (
 										<li

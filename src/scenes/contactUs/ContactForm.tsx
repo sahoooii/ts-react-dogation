@@ -18,7 +18,7 @@ const ContactForm = () => {
 	};
 
 	const formDesignStyle = `mx-auto border-b-2 border-light-green-20 w-full`;
-	const formInputStyle = `w-full bg-sand-80 p-2 text-sm outline-none placeholder:uppercase text-base`;
+	const formInputStyle = `w-full bg-sand-80 p-2 text-lg outline-none placeholder:uppercase`;
 
 	return (
 		<motion.div
@@ -33,12 +33,12 @@ const ContactForm = () => {
 			}}
 		>
 			<div className='mx-auto mt-6 border-2 border-light-green-20 bg-sand-80 p-10 shadow-lg'>
-				<h1 className='pb-2 pt-5 text-center text-xl font-bold sm:pb-6 sm:pt-10 sm:text-4xl'>
+				<h1 className='flex items-center justify-center pb-2 pt-5 text-center text-2xl font-bold sm:pb-6 sm:pt-10 sm:text-4xl'>
 					<FontAwesomeIcon
 						icon={faBone}
 						className='sm:fa-lg fa-xs mr-2 text-light-green-20 sm:mr-4'
-					/>
-					Dogation Member
+					/>{' '}
+					Membership{' '}
 					<FontAwesomeIcon
 						icon={faBone}
 						className='sm:fa-lg fa-xs ml-2 text-light-green-20 sm:ml-4'
@@ -48,14 +48,14 @@ const ContactForm = () => {
 				<form
 					method='POST'
 					target='_blank'
-					action='https://formsubmit.co/d8ba071863b209c206352f351fbccf9e'
+					action={import.meta.env.VITE_FORM_SUBMIT}
 					onSubmit={onSubmit}
 				>
 					<div className='sm:flex sm:justify-between'>
 						<div className={`${formDesignStyle} mt-6 sm:w-[40%]`}>
 							<label htmlFor='firstName'></label>
 							<input
-								placeholder='My First Name is'
+								placeholder='First Name'
 								// name='firstName'
 								className={formInputStyle}
 								type='text'
@@ -77,7 +77,7 @@ const ContactForm = () => {
 						<div className={`${formDesignStyle} mt-6 sm:w-[40%]`}>
 							<label htmlFor='lastName'></label>
 							<input
-								placeholder='My Last Name is'
+								placeholder='Last Name'
 								// name='lastName'
 								className={formInputStyle}
 								type='text'
@@ -101,7 +101,7 @@ const ContactForm = () => {
 					<div className={`${formDesignStyle} mt-6 sm:w-[90%]`}>
 						<label htmlFor='phone'></label>
 						<input
-							placeholder='My number is'
+							placeholder='Phone Number'
 							// name='phone'
 							className={formInputStyle}
 							type='text'
@@ -123,7 +123,7 @@ const ContactForm = () => {
 					<div className={`${formDesignStyle} mt-6 sm:w-[90%]`}>
 						<label htmlFor='email' />
 						<input
-							placeholder='My E-Mail is'
+							placeholder='E-Mail'
 							// name='email'
 							className={formInputStyle}
 							type='text'
@@ -154,12 +154,21 @@ const ContactForm = () => {
 							required
 						>
 							<option hidden value=''>
-								What are you expecting ?
+								SELECT HERE
 							</option>
-							<option value='activity'>I'd like to do some activities.</option>
-							<option value='relax'>I'd like to chill out all day.</option>
+							<option disabled selected value=''>
+								What are you looking forward to at Dogation?
+							</option>
+							<option value='activity'>
+								Exciting Activities (Fun experiences offered at our facilities)
+							</option>
+							<option value='relax'>
+								A Relaxing Getaway (Enjoy a peaceful, all-day retreat at our
+								resort)
+							</option>
 							<option value='for dog'>
-								I'd like to do something special for my dog.
+								Something Special for My Dog (Unique treats, services, or
+								surprises for my furry friend!)
 							</option>
 						</select>
 						{errors.subject && (

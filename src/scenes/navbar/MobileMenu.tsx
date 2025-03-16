@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from './Link';
 import { Links } from './Links';
 import { SelectedPage } from '@/types/types';
@@ -13,6 +13,12 @@ type Props = {
 
 const MobileMenu = ({ selectedPage, setSelectedPage }: Props) => {
 	const [isMenuToggle, setIsMenuToggle] = useState<boolean>(false);
+	const [isLoaded, setIsLoaded] = useState<boolean>(false);
+
+	// After load a page, show hamburger icon
+	useEffect(() => {
+		setIsLoaded(true);
+	}, []);
 
 	const mobileMenuVariant = {
 		opened: {
@@ -70,7 +76,9 @@ const MobileMenu = ({ selectedPage, setSelectedPage }: Props) => {
 	return (
 		<>
 			<button
-				className='rounded-full bg-sun-300 p-2'
+				className={`rounded-full bg-sun-300 p-2 transition-opacity duration-500 ${
+					isLoaded ? 'opacity-100' : 'opacity-0'
+				}`}
 				onClick={() => setIsMenuToggle(!isMenuToggle)}
 			>
 				<Bars3Icon className='h-6 w-6 font-bold text-banana-yellow-200' />
@@ -102,7 +110,7 @@ const MobileMenu = ({ selectedPage, setSelectedPage }: Props) => {
 					</div>
 
 					<motion.ul
-						className='mx-auto flex flex-col items-center justify-center gap-10 font-nav-cursive text-2xl'
+						className='mx-auto flex flex-col items-center justify-center gap-12 font-title-serif text-3xl'
 						variants={ulVariant}
 					>
 						{Links.map(({ id, link }) => (

@@ -1,9 +1,10 @@
 import { SelectedPage } from '@/types/types';
 import { motion } from 'framer-motion';
-import { faMartiniGlassCitrus } from '@fortawesome/free-solid-svg-icons';
+import { faShieldDog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Facility from './Facility';
 import TitleText from '@/shared/TitleText';
+import Tagline from '@/shared/Tagline';
 
 type Props = {
 	setSelectedPage: (value: SelectedPage) => void;
@@ -13,7 +14,7 @@ const Facilities = ({ setSelectedPage }: Props) => {
 	return (
 		<section
 			id='facilities'
-			className='min-h-full w-full bg-sand-80 py-28 sm:py-36'
+			className='min-h-full w-full bg-sand-80 py-52 sm:py-48'
 		>
 			<motion.div
 				onViewportEnter={() => setSelectedPage(SelectedPage.Facilities)}
@@ -29,20 +30,19 @@ const Facilities = ({ setSelectedPage }: Props) => {
 						visible: { opacity: 1, x: 0 },
 					}}
 				>
-					<div className='md:w-3/5'>
+					<div className='flex flex-col items-center justify-center md:w-3/5 md:items-start'>
 						<TitleText>
-							All <span className='text-dark-blue-50'>day</span> , All{' '}
-							<span className='text-dark-blue-50'>Night </span>
+							<span className='text-dark-blue-50'>Our </span>Facilities{' '}
 							<FontAwesomeIcon
-								icon={faMartiniGlassCitrus}
-								className='align-baseline text-banana-yellow-200'
+								icon={faShieldDog}
+								className='text-dark-blue-100'
 							/>
 						</TitleText>
-						<p className='my-5 text-sm leading-5 text-dark-blue-50'>
-							You guys must have fun all day, all night. We have many facilities
-							to enjoy your staying. <br />
-							Not enough time is just only a day!
-						</p>
+						<div className='my-5 w-full text-xl leading-relaxed sm:leading-8'>
+							<Tagline>- Enjoy every moment, Day and Night! -</Tagline>
+							Our facilities are designed to make your stay unforgettable.
+							<br />- You’ll wish you had more than just one day! -
+						</div>
 					</div>
 				</motion.div>
 

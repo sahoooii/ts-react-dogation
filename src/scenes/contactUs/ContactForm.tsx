@@ -154,9 +154,9 @@ const ContactForm = () => {
 							required
 						>
 							<option hidden value=''>
-								SELECT HERE
+								{/* SELECT HERE */}
 							</option>
-							<option disabled selected value=''>
+							<option disabled value='DEFAULT'>
 								What are you looking forward to at Dogation?
 							</option>
 							<option value='activity'>

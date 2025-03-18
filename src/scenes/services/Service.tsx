@@ -25,7 +25,7 @@ const Service = () => {
 		>
 			{ServicesLists.map((service: ServicesType) => (
 				<motion.div variants={childVariant} key={`${service.id}-${service.title}`}>
-					<div className='mt-20 justify-center rounded-md border-2 border-sand-80 px-8 py-8 text-center sm:mt-7 sm:h-[650px] md:h-[400px] sm:max-w-[500px]'>
+					<div className='mt-20 justify-center rounded-md border-2 border-sand-80 px-8 py-8 text-center sm:mt-7 sm:h-[650px] md:h-[440px] sm:max-w-[500px]'>
 						<div className='mb-4 flex justify-center'>
 							<div className='-mt-20 rounded-full border-2 border-sun-300 bg-banana-yellow-50 p-4'>
 								<img

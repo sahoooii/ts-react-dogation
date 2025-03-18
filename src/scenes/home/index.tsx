@@ -52,7 +52,9 @@ const Home = ({ setSelectedPage }: Props) => {
 							<br />
 							Here, you can spend the entire day with your furry friend. Our
 							concept blends vacation and dogs!
-							<Tagline>- Welcome to DOGATION -</Tagline>
+							<div className='flex items-center justify-center'>
+								<Tagline>- Welcome to DOGATION -</Tagline>
+							</div>
 							Located in the heart of Waikiki, the beach is just steps away.
 							Enjoy our stylish café, bar, and more.
 							<br />

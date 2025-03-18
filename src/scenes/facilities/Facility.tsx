@@ -13,7 +13,11 @@ import { FacilitiesLists } from './FacilitiesLists';
 
 const Facility = () => {
 	// const overlayStyles = `py-12 px-10 sm:px-12 absolute z-30 flex flex-col whitespace-normal bg-light-blue-50 text-center opacity-0 transition items-center justify-center duration-500 hover:opacity-90`;
-	const overlayStyles = `py-12 px-10 absolute inset-0 flex flex-col items-center justify-center bg-light-blue-50 text-center opacity-0 transition duration-500 hover:opacity-90 rounded-3xl`;
+	const overlayStyles = `absolute inset-0 flex flex-col items-center justify-center bg-light-blue-50 text-center opacity-0 transition duration-500 hover:opacity-90 rounded-3xl  px-6 py-8 sm:px-8 sm:py-10`;
+
+	// 	const overlayStyles = `absolute z-30 flex flex-col whitespace-normal bg-light-blue-50
+	// text-center opacity-0 transition items-center justify-center duration-500 hover:opacity-90
+	// px-6 py-8 sm:px-8 sm:py-10 overflow-y-auto max-h-full rounded-3xl`;
 
 	const imagesSize =
 		'h-[30rem] w-[24rem] rounded-3xl sm:shadow-2xl shadow-l sm:h-[30rem] sm:w-[34rem] object-cover';
@@ -34,16 +38,16 @@ const Facility = () => {
 				grabCursor={true}
 				centeredSlides={true}
 				loop={true}
-				slidesPerView={1.15} // モバイル
+				slidesPerView={1.4} // モバイル
 				breakpoints={{
-					640: { slidesPerView: 1.85 }, // タブレット
-					1024: { slidesPerView: 3.25 }, // PC
+					640: { slidesPerView: 1.8 }, // タブレット
+					1024: { slidesPerView: 3.2 }, // PC
 				}}
 				coverflowEffect={{
 					rotate: 0,
-					stretch: -60,
-					depth: 150,
-					modifier: 1.5,
+					stretch: -50,
+					depth: 180,
+					modifier: 1.2,
 					slideShadows: false,
 				}}
 				pagination={{ el: '.swiper-pagination', clickable: true }}
@@ -73,7 +77,9 @@ const Facility = () => {
 										))}
 									</div>
 								) : (
-									<p>{facility.description}</p>
+									<p className='text-start text-lg leading-relaxed sm:text-xl sm:leading-8'>
+										{facility.description}
+									</p>
 								)}
 							</div>
 							<img
@@ -84,17 +90,21 @@ const Facility = () => {
 						</li>
 					</SwiperSlide>
 				))}
-				{/* 矢印 */}
-				<div className='absolute bottom-[10%] left-[40%] flex w-32 justify-between'>
-					<div className='swiper-button-prev flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-white after:hidden'>
-						<IonIcon icon={chevronBack} className='text-2xl'></IonIcon>
+				{/* 矢印 & ペジネーションコンテナ */}
+				<div className='absolute bottom-[-3rem] left-1/2 z-50 flex -translate-x-1/2 items-center gap-4'>
+					{/* 前へボタン */}
+					<div className='swiper-button-prev block flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-white after:hidden'>
+						<IonIcon icon={chevronBack} className='text-2xl' />
 					</div>
-					<div className='swiper-button-next flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-white after:hidden'>
-						<IonIcon icon={chevronForward} className='text-2xl'></IonIcon>
+
+					{/* ペジネーション */}
+					<div className='swiper-pagination block flex justify-center'></div>
+
+					{/* 次へボタン */}
+					<div className='swiper-button-next block flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-white after:hidden'>
+						<IonIcon icon={chevronForward} className='text-2xl' />
 					</div>
 				</div>
-				{/* ページネーション */}
-				<div className='swiper-pagination absolute bottom-[2%]'></div>
 			</Swiper>
 		</motion.div>
 	);

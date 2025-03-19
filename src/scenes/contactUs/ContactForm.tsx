@@ -183,7 +183,7 @@ const ContactForm = () => {
 						<input
 							type='submit'
 							value='Become A Member'
-							className='flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-banana-yellow-50  px-7 py-2 font-title-serif text-xl text-sun-300 transition duration-500 group-hover:translate-y-0.5  group-hover:bg-sun-300 group-hover:text-banana-yellow-50'
+							className='flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-banana-yellow-50 px-8 py-3 font-title-serif text-xl text-sun-300 transition duration-500 group-hover:translate-y-0.5 group-hover:bg-sun-300 group-hover:text-banana-yellow-50  md:px-6 md:py-3'
 						/>
 					</div>
 				</form>

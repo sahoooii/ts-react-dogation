@@ -26,3 +26,10 @@ input:-webkit-autofill:active {
 select:invalid {
 	color: rgb(148 163 184);
 }
+
+.swiper-pagination {
+  display: flex !important; /* 横並びにする */
+  justify-content: center; /* 中央揃え */
+  gap: 0.5rem; /* ドットの間隔を調整 */
+	height:22px;
+}

@@ -12,15 +12,7 @@ import 'swiper/css/pagination';
 import { FacilitiesLists } from './FacilitiesLists';
 
 const Facility = () => {
-	// const overlayStyles = `py-12 px-10 sm:px-12 absolute z-30 flex flex-col whitespace-normal bg-light-blue-50 text-center opacity-0 transition items-center justify-center duration-500 hover:opacity-90`;
-	const overlayStyles = `absolute inset-0 flex flex-col items-center justify-center bg-light-blue-50 text-center opacity-0 transition duration-500 hover:opacity-90 rounded-3xl  px-6 py-8 sm:px-8 sm:py-10`;
-
-	// 	const overlayStyles = `absolute z-30 flex flex-col whitespace-normal bg-light-blue-50
-	// text-center opacity-0 transition items-center justify-center duration-500 hover:opacity-90
-	// px-6 py-8 sm:px-8 sm:py-10 overflow-y-auto max-h-full rounded-3xl`;
-
-	const imagesSize =
-		'h-[30rem] w-[24rem] rounded-3xl sm:shadow-2xl shadow-l sm:h-[30rem] sm:w-[34rem] object-cover';
+	const overlayStyles = `absolute inset-0 flex flex-col items-center justify-center bg-light-blue-50 opacity-0 transition duration-500 hover:opacity-90 rounded-3xl  px-6 py-8 sm:px-8 sm:py-10`;
 
 	return (
 		<motion.div
@@ -32,6 +24,7 @@ const Facility = () => {
 				hidden: { opacity: 0, y: -50 },
 				visible: { opacity: 1, y: 0 },
 			}}
+			className='relative mt-10 pb-[4rem]'
 		>
 			<Swiper
 				effect={'coverflow'}
@@ -45,22 +38,24 @@ const Facility = () => {
 				}}
 				coverflowEffect={{
 					rotate: 0,
-					stretch: -50,
-					depth: 180,
+					stretch: -10,
+					depth: 200,
 					modifier: 1.2,
 					slideShadows: false,
 				}}
-				pagination={{ el: '.swiper-pagination', clickable: true }}
+				// pagination={{ el: '.swiper-pagination', clickable: true }}
 				navigation={{
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev',
 				}}
+				pagination={{ clickable: true }}
+				// navigation={true}
 				modules={[EffectCoverflow, Pagination, Navigation]}
 				className='relative w-full overflow-hidden'
 			>
 				{FacilitiesLists.map((facility, index) => (
 					<SwiperSlide key={`${index}-${facility.title}`} className='relative'>
-						<li className='relative inline-block h-[20rem] w-full sm:h-[24rem] md:h-[30rem]'>
+						<li className='relative mx-auto inline-block h-[32rem] w-full max-w-[400px] sm:h-[32rem] sm:max-w-full md:h-[36rem]'>
 							<div className={overlayStyles}>
 								<h4 className='font-title-serif text-3xl font-bold sm:text-4xl'>
 									{facility.title}
@@ -77,7 +72,7 @@ const Facility = () => {
 										))}
 									</div>
 								) : (
-									<p className='text-start text-lg leading-relaxed sm:text-xl sm:leading-8'>
+									<p className='text-start text-lg leading-relaxed sm:text-xl sm:leading-7'>
 										{facility.description}
 									</p>
 								)}
@@ -90,20 +85,21 @@ const Facility = () => {
 						</li>
 					</SwiperSlide>
 				))}
-				{/* 矢印 & ペジネーションコンテナ */}
-				<div className='absolute bottom-[-3rem] left-1/2 z-50 flex -translate-x-1/2 items-center gap-4'>
+
+				{/* 矢印 */}
+				<div className='absolute bottom-1/2 left-1/2 z-50 hidden w-full -translate-x-1/2 items-center justify-between md:flex'>
 					{/* 前へボタン */}
-					<div className='swiper-button-prev block flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-white after:hidden'>
+					<div className='swiper-button-prev flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-white transition after:hidden hover:bg-gray-600'>
 						<IonIcon icon={chevronBack} className='text-2xl' />
 					</div>
-
-					{/* ペジネーション */}
-					<div className='swiper-pagination block flex justify-center'></div>
-
 					{/* 次へボタン */}
-					<div className='swiper-button-next block flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-white after:hidden'>
+					<div className='swiper-button-next flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 text-white transition after:hidden hover:bg-gray-600'>
 						<IonIcon icon={chevronForward} className='text-2xl' />
 					</div>
+				</div>
+				{/* ページネーション */}
+				<div className='pagination-container absolute bottom-0 left-1/2 z-50 flex -translate-x-1/2 justify-center pb-4'>
+					<div className='swiper-pagination'></div>
 				</div>
 			</Swiper>
 		</motion.div>

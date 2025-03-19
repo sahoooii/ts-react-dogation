@@ -11,7 +11,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMartiniGlassCitrus, faPaw } from '@fortawesome/free-solid-svg-icons';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { motion } from 'framer-motion';
-import Tagline from '@/shared/Tagline';
 
 type Props = {
 	setSelectedPage: (value: SelectedPage) => void;

@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 import { FacilitiesLists } from './FacilitiesLists';
 
 const Facility = () => {
-	const overlayStyles = `absolute inset-0 flex flex-col items-center justify-center bg-light-blue-50 opacity-0 transition duration-500 hover:opacity-90 rounded-3xl  px-6 py-8 sm:px-8 sm:py-10`;
+	const overlayStyles = `absolute inset-0 flex flex-col items-center justify-center bg-light-blue-50 opacity-0 transition duration-500 hover:opacity-90 rounded-3xl px-6 py-4 sm:px-8 sm:py-8`;
 
 	return (
 		<motion.div
@@ -57,11 +57,11 @@ const Facility = () => {
 					<SwiperSlide key={`${index}-${facility.title}`} className='relative'>
 						<li className='relative mx-auto inline-block h-[32rem] w-full max-w-[400px] sm:h-[32rem] sm:max-w-full md:h-[36rem]'>
 							<div className={overlayStyles}>
-								<h4 className='font-title-serif text-3xl font-bold sm:text-4xl'>
+								<h4 className='font-title-serif text-3xl font-bold sm:text-4xl text-center'>
 									{facility.title}
 								</h4>
 								{Array.isArray(facility.description) ? (
-									<div className='mt-3'>
+									<div className='mt-6'>
 										{facility.description.map((text, index) => (
 											<p
 												key={index}

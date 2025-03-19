@@ -31,15 +31,15 @@ const Facility = () => {
 				grabCursor={true}
 				centeredSlides={true}
 				loop={true}
-				slidesPerView={1.4} // モバイル
+				slidesPerView={1.2} // モバイル
 				breakpoints={{
-					640: { slidesPerView: 1.8 }, // タブレット
+					640: { slidesPerView: 1.6 }, // タブレット
 					1024: { slidesPerView: 3.2 }, // PC
 				}}
 				coverflowEffect={{
 					rotate: 0,
 					stretch: -10,
-					depth: 200,
+					depth: 160,
 					modifier: 1.2,
 					slideShadows: false,
 				}}

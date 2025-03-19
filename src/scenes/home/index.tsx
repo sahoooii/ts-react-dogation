@@ -82,7 +82,7 @@ const Home = ({ setSelectedPage }: Props) => {
 							Join Now
 						</ActionButton>
 						<AnchorLink
-							className='group font-title-serif text-lg font-bold text-light-blue-100 underline transition duration-500 hover:text-sun-300'
+							className='group font-title-serif text-xl font-bold text-light-blue-100 underline transition duration-500 hover:text-sun-300'
 							onClick={() => setSelectedPage(SelectedPage.Services)}
 							href={`#${SelectedPage.Services}`}
 						>

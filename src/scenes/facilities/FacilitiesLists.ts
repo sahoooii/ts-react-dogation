@@ -10,9 +10,9 @@ export const FacilitiesLists: Array<FacilitiesType> = [
 	{
 		title: 'Dog Run',
 		description: [
-			'We have spacious dog runs designed for different breeds.',
-			'There are four areas: Large, Medium, Small breeds, and an All-Dogs section. 🐶',
-			'Each run even has a small pond where dogs can cool off! If your buddy gets wet, don’t worry—we have a self-service shampoo room to freshen them up.',
+			'Spacious dog runs designed for different breeds.',
+			'Four areas: Large, Medium, Small breeds, and All-Dogs. 🐶',
+			'Each run has a pond for cooling off—plus a self-service shampoo room!',
 		],
 		image: dogRunJump,
 	},
@@ -28,8 +28,8 @@ export const FacilitiesLists: Array<FacilitiesType> = [
 	{
 		title: 'Trimming Salon',
 		description: [
-			'Right next to the Photo Studio, our Trimming Salon is here to keep your dog looking fresh and clean. ✂️',
-			'Need a quick touch-up? Our skilled trimmers offer various grooming courses, all bookable through the Dogation App. Prefer to do it yourself? Check out our self-service shampoo station! 🧴',
+			'Next to the Photo Studio, our Trimming Salon keeps your dog fresh and clean. ✂️',
+			'Our skilled trimmers offer various grooming courses, all bookable through the Dogation App. Prefer to do it yourself? Check out our self-service shampoo station! 🧴',
 		],
 		image: trimming,
 	},

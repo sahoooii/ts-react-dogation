@@ -40,22 +40,22 @@ Swiper.js を活用したスライダーや、洗練されたアニメーショ�
 
 ## Features
 
-✅ Responsive design (optimized for mobile & tablet & desktop)<br />
 ✅ Smooth animations for an immersive user experience
 <br />
 ✅ Swiper.js-powered interactive sliders for browsing hotel facilities
 <br />
+✅ Responsive design (optimized for mobile & tablet & desktop)<br />
 ✅ Pet-friendly hotel showcase with detailed facility descriptions
 <br />
 ✅ Multi-section UI including a resort guide, membership details, and Services
 <br />
 <br />
 
-✅ レスポンシブデザイン（モバイル＆タブレット&PC対応）
-<br />
 ✅ 滑らかなアニメーションで没入感のある UX を実現
 <br />
 ✅ Swiper.js を活用したスライダーでホテル施設をスムーズに閲覧
+<br />
+✅ レスポンシブデザイン（モバイル＆タブレット&PC対応）
 <br />
 ✅ ペットフレンドリーなホテルの魅力をわかりやすく紹介
 <br />
@@ -83,14 +83,13 @@ Swiper.js を活用したスライダーや、洗練されたアニメーショ�
    ```bash
    npm install
    ```
-4. Create a .env file and add required environment variables.<br /><br >
+4. Start the development server
+   ```bash
+   npm run dev
+   ```
+5. Create a .env file and add required environment variables.<br /><br >
    Rename the `example.env` file to `.env` and add the following
 
    ```bash
    REACT_APP_FORM_SUBMIT=ADD_YOUR_GET_FORM_INFO
-   ```
-
-5. Start the development server
-   ```bash
-   npm run dev
    ```

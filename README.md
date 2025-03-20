@@ -40,18 +40,18 @@ Swiper.js を活用したスライダーや、洗練されたアニメーショ�
 
 ## Features
 
-✅ Responsive design (optimized for mobile & desktop)<br />
+✅ Responsive design (optimized for mobile & tablet & desktop)<br />
 ✅ Smooth animations for an immersive user experience
 <br />
 ✅ Swiper.js-powered interactive sliders for browsing hotel facilities
 <br />
 ✅ Pet-friendly hotel showcase with detailed facility descriptions
 <br />
-✅ Multi-section UI including a resort guide, membership details, and FAQs
+✅ Multi-section UI including a resort guide, membership details, and Services
 <br />
 <br />
 
-✅ レスポンシブデザイン（モバイル＆PC&タブレット対応）
+✅ レスポンシブデザイン（モバイル＆タブレット&PC対応）
 <br />
 ✅ 滑らかなアニメーションで没入感のある UX を実現
 <br />
@@ -59,7 +59,7 @@ Swiper.js を活用したスライダーや、洗練されたアニメーショ�
 <br />
 ✅ ペットフレンドリーなホテルの魅力をわかりやすく紹介
 <br />
-✅ 複数のセクション（リゾートガイド・ホテルメンバー・FAQ など）
+✅ 複数のセクション（リゾートガイド・ホテルメンバー・ホテルサービス など）
 
 ## src
 
@@ -79,7 +79,7 @@ Swiper.js を活用したスライダーや、洗練されたアニメーショ�
    ```bash
    cd ts-react-dogation
    ```
-3. ts-react-dogation is a React app framework powered by vite. Install dependencies
+3. Install dependencies
    ```bash
    npm install
    ```
@@ -88,7 +88,6 @@ Swiper.js を活用したスライダーや、洗練されたアニメーショ�
 
    ```bash
    REACT_APP_FORM_SUBMIT=ADD_YOUR_GET_FORM_INFO
-
    ```
 
 5. Start the development server

@@ -146,16 +146,15 @@ const ContactForm = () => {
 						<select
 							// name='subject'
 							className={`${formInputStyle}`}
-							placeholder='Subject line'
 							defaultValue={'DEFAULT'}
 							{...register('subject', {
 								required: true,
 							})}
 							required
 						>
-							<option hidden value=''>
-								{/* SELECT HERE */}
-							</option>
+							<label htmlFor='subject' className='sr-only'>
+								Subject
+							</label>
 							<option disabled value='DEFAULT'>
 								What are you looking forward to at Dogation?
 							</option>

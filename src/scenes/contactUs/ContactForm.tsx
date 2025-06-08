@@ -152,9 +152,6 @@ const ContactForm = () => {
 							})}
 							required
 						>
-							<label htmlFor='subject' className='sr-only'>
-								Subject
-							</label>
 							<option disabled value='DEFAULT'>
 								What are you looking forward to at Dogation?
 							</option>

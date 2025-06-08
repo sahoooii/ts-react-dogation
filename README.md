@@ -1,13 +1,13 @@
 # ts-react-dogation
 
-## Tech Stack
+## 🛠 Tech Stack
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Motion](https://img.shields.io/badge/Motion-0055ff?style=for-the-badge&logo=framer&logoColor=white)
-![Swiper](https://img.shields.io/badge/swiper-0055ff?style=for-the-badge&logo=swiper&logoColor=white)
-![React Hook Form](https://img.shields.io/badge/-React_Hook_Form-EC5990?style=for-the-badge&logo=reacthookform&logoColor=white)
+![React](https://img.shields.io/badge/React@18.2.0-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript@4.9.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS@3.3.1-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion@10.10.0-0055ff?style=for-the-badge&logo=framer&logoColor=white)
+![Swiper](https://img.shields.io/badge/Swiper@8.4.7-0055ff?style=for-the-badge&logo=swiper&logoColor=white)
+![React Hook Form](https://img.shields.io/badge/React_Hook_Form@7.43.9-EC5990?style=for-the-badge&logo=reacthookform&logoColor=white)
 
 <p>etc...</p>
 
@@ -55,7 +55,7 @@ Swiper.js を活用したスライダーや、洗練されたアニメーショ�
 <br />
 ✅ Swiper.js を活用したスライダーでホテル施設をスムーズに閲覧
 <br />
-✅ レスポンシブデザイン（モバイル＆タブレット&PC対応）
+✅ レスポンシブデザイン（モバイル＆タブレット&PC 対応）
 <br />
 ✅ ペットフレンドリーなホテルの魅力をわかりやすく紹介
 <br />

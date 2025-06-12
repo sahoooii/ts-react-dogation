@@ -6,15 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const ContactForm = () => {
 	const {
 		register,
-		trigger,
+		handleSubmit,
 		formState: { errors },
-	} = useForm();
+	} = useForm({ mode: 'onSubmit' });
 
-	const onSubmit = async (e: any) => {
-		const isValid = await trigger();
-		if (!isValid) {
-			e.preventDefault();
-		}
+	const onValid = (data: any) => {
+		console.log('Valid:', data);
 	};
 
 	const formDesignStyle = `mx-auto border-b-2 border-light-green-20 w-full`;
@@ -49,14 +46,13 @@ const ContactForm = () => {
 					method='POST'
 					target='_blank'
 					action={import.meta.env.VITE_FORM_SUBMIT}
-					onSubmit={onSubmit}
+					onSubmit={handleSubmit(onValid)}
 				>
 					<div className='sm:flex sm:justify-between'>
 						<div className={`${formDesignStyle} mt-6 sm:w-[40%]`}>
 							<label htmlFor='firstName'></label>
 							<input
 								placeholder='First Name'
-								// name='firstName'
 								className={formInputStyle}
 								type='text'
 								autoComplete='on'
@@ -78,7 +74,6 @@ const ContactForm = () => {
 							<label htmlFor='lastName'></label>
 							<input
 								placeholder='Last Name'
-								// name='lastName'
 								className={formInputStyle}
 								type='text'
 								autoComplete='on'
@@ -97,7 +92,6 @@ const ContactForm = () => {
 							)}
 						</div>
 					</div>
-
 					<div className={`${formDesignStyle} mt-6 sm:w-[90%]`}>
 						<label htmlFor='phone'></label>
 						<input
@@ -119,12 +113,10 @@ const ContactForm = () => {
 							</p>
 						)}
 					</div>
-
 					<div className={`${formDesignStyle} mt-6 sm:w-[90%]`}>
 						<label htmlFor='email' />
 						<input
 							placeholder='E-Mail'
-							// name='email'
 							className={formInputStyle}
 							type='text'
 							autoComplete='on'
@@ -140,19 +132,16 @@ const ContactForm = () => {
 							</p>
 						)}
 					</div>
-
 					<div className={`${formDesignStyle} mt-6 sm:w-[90%]`}>
 						<label htmlFor='subject'></label>
 						<select
-							// name='subject'
 							className={`${formInputStyle}`}
-							defaultValue={'DEFAULT'}
+							defaultValue=''
 							{...register('subject', {
-								required: true,
+								required: 'Please select a value',
 							})}
-							required
 						>
-							<option disabled value='DEFAULT'>
+							<option value='' hidden>
 								What are you looking forward to at Dogation?
 							</option>
 							<option value='activity'>
@@ -174,7 +163,6 @@ const ContactForm = () => {
 							</p>
 						)}
 					</div>
-
 					<div className='hover:translate-y-0.7 group mx-auto mb-12 mt-16 w-full shadow-lg transition duration-500 sm:mb-24 sm:w-[45%]'>
 						<input
 							type='submit'
